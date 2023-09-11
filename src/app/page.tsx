@@ -1,6 +1,3 @@
-import Image from "next/image";
-import {StarIcon} from '@heroicons/react/20/solid'
-
 
 export default function Home() {
     return (
