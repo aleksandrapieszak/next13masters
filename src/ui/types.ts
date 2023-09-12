@@ -2,7 +2,7 @@ export type ProductItemType = {
     id:number,
     category: string,
     name: string,
-    price: number,
+    price: string,
     numberOfStars: number,
     coverImage: {
         src: string,
