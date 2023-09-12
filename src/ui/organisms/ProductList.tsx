@@ -1,5 +1,5 @@
 import {ProductItemWithImageAndButton} from "@/ui/molecules/ProductItemWithImageAndButton";
-import {ProductItemType} from "@/ui/types";
+import type {ProductItemType} from "@/ui/types";
 
 export const ProductList = ({products}:{products: ProductItemType[]}) => {
     return (

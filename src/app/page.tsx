@@ -1,6 +1,5 @@
-import {ProductItemWithImageAndButton} from "@/ui/molecules/ProductItemWithImageAndButton";
 import {ProductList} from "@/ui/organisms/ProductList";
-import {ProductItemType} from "@/ui/types";
+import type {ProductItemType} from "@/ui/types";
 
 const products:ProductItemType[] = [
     {

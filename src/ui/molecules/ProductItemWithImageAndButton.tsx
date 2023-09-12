@@ -1,7 +1,7 @@
 import {ProductCoverImage} from "@/ui/atoms/ProductCoverImage";
 import {AddToCardButton} from "@/ui/atoms/buttons/AddToCardButton";
 import {ProductItem} from "@/ui/molecules/ProductItem";
-import {ProductItemType} from "@/ui/types";
+import type {ProductItemType} from "@/ui/types";
 //produkt ze wszystkimi właściwościami nawet guzikiem
 type ProductItemProps = {
     product: ProductItemType
