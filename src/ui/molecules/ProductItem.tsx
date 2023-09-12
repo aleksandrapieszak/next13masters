@@ -13,7 +13,7 @@ export const ProductItem = ({
                                 }: ProductItemProps) => {
     return (
         <div className="relative mt-4 text-center">
-            <ProductPrice price={formatMoney(price)}/>
+            <ProductPrice price={price}/>
             <ProductTitle name={name}/>
             <ProductCategory category={category}/>
             <StarsItemList numberOfStars={numberOfStars}/>
