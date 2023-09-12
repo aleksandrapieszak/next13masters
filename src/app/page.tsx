@@ -7,7 +7,7 @@ const products:ProductItemType[] = [
         id:1,
         category: "structural image",
         name: "ROSE GOLD WHITE",
-        price: 299,
+        price: "299",
         numberOfStars: 5,
         coverImage: {
             src: "/images/2.jpg",
@@ -18,7 +18,7 @@ const products:ProductItemType[] = [
         id:2,
         category: "painted image",
         name: "BEIGE MOOD",
-        price: 120,
+        price: "120",
         numberOfStars: 5,
         coverImage: {
             src: "/images/1.jpg",
@@ -29,7 +29,7 @@ const products:ProductItemType[] = [
         id:3,
         category: "structural images",
         name: "BLUE MOON",
-        price: 99,
+        price: "99",
         numberOfStars: 5,
         coverImage: {
             src: "/images/3.jpg",
@@ -40,7 +40,7 @@ const products:ProductItemType[] = [
         id:4,
         category: "painted image",
         name: "MOOD HARRY",
-        price: 720,
+        price: "720",
         numberOfStars: 1,
         coverImage: {
             src: "/images/1.jpg",
