@@ -10,7 +10,7 @@ export const generateStaticParams = async () => {
     }))
 }
 
-export default async function SingleProductPage({params}: { productId: string }) {
+export async function SingleProductPage({params}: { productId: string }) {
 
     const product = await getProductById(params.productId)
     return (
