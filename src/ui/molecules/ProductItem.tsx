@@ -8,14 +8,13 @@ type ProductItemProps = {
     product: ProductItemType
     }
 export const ProductItem = ({
-                                product: {category, name, price, numberOfStars}
+                                product: {category, name, price}
                                 }: ProductItemProps) => {
     return (
-        <div className="relative mt-4 text-center">
+        <div className="mt-2">
             <ProductPrice price={price}/>
             <ProductTitle name={name}/>
             <ProductCategory category={category}/>
-            <StarsItemList numberOfStars={numberOfStars}/>
         </div>
     )
 }
