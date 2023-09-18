@@ -1,7 +1,6 @@
 import {ProductPrice} from "@/ui/atoms/ProductPrice";
 import {ProductTitle} from "@/ui/atoms/ProductTitle";
 import {ProductCategory} from "@/ui/atoms/ProductCategory";
-import {StarsItemList} from "@/ui/molecules/StarsItemList";
 import type {ProductItemType} from "@/ui/types";
 
 type ProductItemProps = {

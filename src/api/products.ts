@@ -1,4 +1,4 @@
-import {ProductItemType} from "@/ui/types";
+import type {ProductItemType} from "@/ui/types";
 
 type ProductResponseItem = {
     id: string,

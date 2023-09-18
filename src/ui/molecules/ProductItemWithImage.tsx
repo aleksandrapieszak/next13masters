@@ -1,5 +1,4 @@
 import {ProductCoverImage} from "@/ui/atoms/ProductCoverImage";
-import {AddToCardButton} from "@/ui/atoms/buttons/AddToCardButton";
 import {ProductItem} from "@/ui/molecules/ProductItem";
 import type {ProductItemType} from "@/ui/types";
 import Link from "next/link";

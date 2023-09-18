@@ -2,9 +2,7 @@ import "./globals.css";
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import React from "react";
-import Link from "next/link";
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
-import {ProductList} from "@/ui/organisms/ProductList";
 
 const inter = Inter({subsets: ["latin"]});
 
