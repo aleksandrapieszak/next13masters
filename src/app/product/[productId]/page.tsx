@@ -3,6 +3,8 @@ import {getProductById, getProductList} from "@/api/products";
 import {SuggestedProductsList} from "@/ui/organisms/SuggestedProducts";
 import {ProductItemWithImage} from "@/ui/molecules/ProductItemWithImage";
 
+
+//statyczne generowanie stron
 export const generateStaticParams = async () => {
     const products = await getProductList();
     return products.map((product) => ({
