@@ -1,7 +1,7 @@
+import Link from "next/link";
 import {ProductCoverImage} from "@/ui/atoms/ProductCoverImage";
 import {ProductItem} from "@/ui/molecules/ProductItem";
 import type {ProductItemType} from "@/ui/types";
-import Link from "next/link";
 //produkt ze wszystkimi właściwościami nawet guzikiem
 type ProductItemProps = {
     product: ProductItemType

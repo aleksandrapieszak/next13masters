@@ -4,7 +4,7 @@ import Link from "next/link";
 import React from "react";
 import clsx from "clsx";
 import {usePathname} from "next/navigation";
-import {Route} from "next";
+import type {Route} from "next";
 
 export const ActiveLink=({href, children}:{href:Route<string>, children: React.ReactNode})=>{
 

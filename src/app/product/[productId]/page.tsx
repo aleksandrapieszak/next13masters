@@ -1,6 +1,6 @@
+import React, {Suspense} from "react";
 import {getProductById, getProductList} from "@/api/products";
 import {SuggestedProductsList} from "@/ui/organisms/SuggestedProducts";
-import React, {Suspense} from "react";
 import {ProductItemWithImage} from "@/ui/molecules/ProductItemWithImage";
 
 export const generateStaticParams = async () => {
