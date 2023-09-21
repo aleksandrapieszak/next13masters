@@ -8,7 +8,7 @@ export const generateStaticParams = async () => {
 
     const pages = [];
     for (let i = 1; i <= pagesAmount; i++) {
-        pages.push({ params: { page: i.toString() } });
+        pages.push({ pageNumber: i.toString() });
     }
 
     return pages;
