@@ -1,10 +1,5 @@
-import {ProductList} from "@/ui/organisms/ProductList";
-import {getProductList} from "@/api/products";
+import { redirect } from "next/navigation";
 
-export default async function ProductsPage() {
-
-    const products = await getProductList();
-    return <>
-        <ProductList products={products}/>
-    </>
+export default async function Products() {
+    redirect("/products/1");
 }

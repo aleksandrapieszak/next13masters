@@ -9,6 +9,8 @@ type ProductItemProps = {
 export const ProductItem = ({
                                 product: {category, name, price}
                                 }: ProductItemProps) => {
+
+
     return (
         <div className="mt-2">
             <ProductPrice price={price}/>

@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import React from "react";
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
+import clsx from "clsx";
 
 const inter = Inter({subsets: ["latin"]});
 
@@ -21,10 +22,10 @@ export default function RootLayout({
         <nav className="bg-gray-100">
             <ul className="flex space-x-4 mx-auto p-5 max-w-7xl px-2 sm:px-6 lg:px-8 ">
                 <li>
-                    <ActiveLink href={"/"}>Strona główna </ActiveLink>
+                    <ActiveLink exact={true} href={"/"} className={`text-black hover:text-gray-400`} activeClassName={`underline`}>Strona główna </ActiveLink>
                 </li>
                 <li>
-                    <ActiveLink  href={"/products"}> Produkty </ActiveLink>
+                    <ActiveLink  exact={false} href={"/products"} className={`text-black hover:text-gray-400`} activeClassName={`underline`}> Produkty </ActiveLink>
                 </li>
             </ul>
         </nav>

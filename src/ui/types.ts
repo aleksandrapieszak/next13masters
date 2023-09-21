@@ -6,5 +6,6 @@ export type ProductItemType = {
     coverImage: {
         src: string,
         alt: string,
-    }
+    },
+    description: string
 }
