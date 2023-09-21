@@ -1,5 +1,5 @@
 import {ProductList} from "@/ui/organisms/ProductList";
-import {getProductById, getProductList, getProductsByPage} from "@/api/products";
+import {getProductList, getProductsByPage} from "@/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
 
 export default async function ProductsPaginationPage({params}:{params:{pageNumber:number}}) {
