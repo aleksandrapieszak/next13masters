@@ -8,9 +8,9 @@ import {ProductItemWithImage} from "@/ui/molecules/ProductItemWithImage";
 //statyczne generowanie stron jesli jest ich niewiele
 export const generateStaticParams = async () => {
     const products = await getProductList();
-    return console.log(products.map((product) => ({
+    return products.map((product) => ({
         productId: product.id
-    })))
+    }))
 }
 
 //seo
