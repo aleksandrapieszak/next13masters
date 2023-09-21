@@ -2,10 +2,9 @@ import { ActiveLink } from "@/ui/atoms/ActiveLink";
 
 type PaginationProps = {
     totalPages: number;
-    currentPage: number
 };
 
-export const Pagination = ({ totalPages, currentPage }: PaginationProps) => {
+export const Pagination = ({ totalPages }: PaginationProps) => {
     const pages = Array.from({ length: totalPages }, (_, i) => i + 1);
 
     return (

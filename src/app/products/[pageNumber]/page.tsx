@@ -13,7 +13,7 @@ export default async function ProductsPaginationPage({params}:{params:{pageNumbe
     return (
         <div>
             <ProductList products={productsByPage}/>
-            <Pagination currentPage={params.pageNumber} totalPages={totalPages}/>
+            <Pagination  totalPages={totalPages}/>
         </div>
 
 )

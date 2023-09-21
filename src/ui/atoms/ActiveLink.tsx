@@ -1,7 +1,6 @@
 "use client"
 import clsx from "clsx";
 import Link from "next/link";
-import React from 'react';
 import type { ReactNode } from 'react';
 import type {Route} from "next";
 import {usePathname} from "next/navigation";
