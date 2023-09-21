@@ -1,5 +1,5 @@
 import React, {Suspense} from "react";
-import {Metadata} from "next";
+import type {Metadata} from "next";
 import {getProductById, getProductList} from "@/api/products";
 import {SuggestedProductsList} from "@/ui/organisms/SuggestedProducts";
 import {ProductItemWithImage} from "@/ui/molecules/ProductItemWithImage";
