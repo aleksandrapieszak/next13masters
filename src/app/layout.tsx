@@ -21,10 +21,10 @@ export default function RootLayout({
         <nav className="bg-gray-100">
             <ul className="flex space-x-4 mx-auto p-5 max-w-7xl px-2 sm:px-6 lg:px-8 ">
                 <li>
-                    <ActiveLink exact={true} href={"/"} className={`text-black hover:text-gray-400`} activeClassName={`underline`}>Strona główna </ActiveLink>
+                    <ActiveLink exact={true} href={"/"} className={`text-black hover:text-gray-400`} activeClassName={`underline`}>Home </ActiveLink>
                 </li>
                 <li>
-                    <ActiveLink  exact={false} href={"/products"} className={`text-black hover:text-gray-400`} activeClassName={`underline`}> Produkty </ActiveLink>
+                    <ActiveLink  exact={false} href={"/products"} className={`text-black hover:text-gray-400`} activeClassName={`underline`}> All </ActiveLink>
                 </li>
             </ul>
         </nav>
