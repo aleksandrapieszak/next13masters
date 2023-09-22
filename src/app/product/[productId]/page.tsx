@@ -32,6 +32,7 @@ export default async function SingleProductPage({params}: { params: {productId: 
     return (
         <>
             <div>
+                <h1>{product.name}</h1>
                 <ProductItemWithImage product={product}/>
             </div>
             <aside>
