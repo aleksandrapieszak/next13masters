@@ -14,21 +14,27 @@ export const generateStaticParams = async () => {
 }
 
 //seo
-export const generateMetadata = async({params}:{params:{productId:string}}):
-    Promise<Metadata>=> {
-const product = await getProductById(params.productId);
+export const generateMetadata = async ({
+                                           params,
+                                       }: {
+    params: { productId: string };
+}): Promise<Metadata> => {
+    const product = await getProductById(params.productId);
     return {
-        title: `${product.name}`,
-        description: `${product.description}`,
+        title: product.name,
+        description: product.description,
         openGraph: {
-            description: `${product.description}`,
+            title: product.name,
+            description: product.description,
+            images: [{ url: product.coverImage.src }],
         },
-    }
-}
+    };
+};
 
 export default async function SingleProductPage({params}: { params: {productId: string }}) {
 
     const product = await getProductById(params.productId)
+
     return (
         <>
             <div>
