@@ -20,11 +20,9 @@ const product = await getProductById(params.productId);
     return {
         title: `${product.name}`,
         description: `${product.description}`,
-        // openGraph: {
-        //     title: `${product.name}`,
-        //     description: `${product.description}`,
-        //     images: [product.coverImage.src],
-        // },
+        openGraph: {
+            description: `${product.description}`,
+        },
     }
 }
 
