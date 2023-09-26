@@ -65,6 +65,13 @@
       { "argsIgnorePattern": "^_", "varsIgnorePattern": "^_" }
     ],
 
+    "no-restricted-imports": [
+      "error",{
+        "name": "next/router",
+        "message": "Please use next/navigation"
+      }
+    ],
+
     // numbers and booleans are fine in template strings
     "@typescript-eslint/restrict-template-expressions": [
       "error",

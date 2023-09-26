@@ -1,0 +1,14 @@
+query GetProductsByPage($skip: Int!, $first: Int!) {
+    products(skip: $skip, first: $first) {
+        id
+        name
+        description
+        categories(first:1){
+            name
+        }
+        images(first:1) {
+            url
+        }
+        price
+    }
+}

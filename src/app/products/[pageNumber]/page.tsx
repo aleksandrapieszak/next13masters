@@ -22,6 +22,7 @@ export default async function ProductsPaginationPage({params}:{params:{pageNumbe
 
     //w zależności od strony pobierz takie produkty że były po 5 na stronę
     const productsByPage = await getProductsByPage(params.pageNumber)
+
     return (
         <div>
             <ProductList products={productsByPage}/>

@@ -3,6 +3,7 @@ import type {Metadata} from "next";
 import {getProductById, getProductList} from "@/api/products";
 import {SuggestedProductsList} from "@/ui/organisms/SuggestedProducts";
 import {ProductItemWithImage} from "@/ui/molecules/ProductItemWithImage";
+import {notFound} from "next/navigation";
 
 
 //statyczne generowanie stron jesli jest ich niewiele
@@ -21,12 +22,12 @@ export const generateMetadata = async ({
 }): Promise<Metadata> => {
     const product = await getProductById(params.productId);
     return {
-        title: product.name,
-        description: product.description,
+        title: product?.name,
+        description: product?.description,
         openGraph: {
-            title: product.name,
-            description: product.description,
-            images: [{ url: product.coverImage.src }],
+            title: product?.name,
+            description: product?.description,
+            images: [{ url: product?.coverImage[0] }],
         },
     };
 };
@@ -34,6 +35,11 @@ export const generateMetadata = async ({
 export default async function SingleProductPage({params}: { params: {productId: string }}) {
 
     const product = await getProductById(params.productId)
+
+
+    if (!product){
+        notFound();
+    }
 
     return (
         <>

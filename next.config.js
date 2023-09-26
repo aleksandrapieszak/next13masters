@@ -4,6 +4,15 @@ const nextConfig = {
     experimental: {
         typedRoutes: false,
         mdxRs: true
+    },
+    redirects: async () =>{
+        return [
+            {
+                source: "/products/category/t-shirts",
+                destination: "/products/category/t-shirts/1",
+                permanent: false
+            }
+        ]
     }
 };
 

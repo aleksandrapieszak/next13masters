@@ -13,8 +13,8 @@ export const ProductItemWithImageAndButton = ({product}:
         <li>
             <div className="rounded-md text-center">
                 <Link href={`/product/${product.id}`}>
-
-                    <ProductCoverImage src={product.coverImage.src} alt={product.coverImage.alt}/>
+                    {product.coverImage &&
+                        (<ProductCoverImage src={product.coverImage.src} alt={product.coverImage.alt}/>)}
                     <ProductItem product={product}/>
                 </Link>
                 <AddToCardButton title={'Add to card'}/>
