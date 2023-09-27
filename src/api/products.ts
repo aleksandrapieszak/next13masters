@@ -6,6 +6,7 @@ import {
     TypedDocumentString
 } from "@/gql/graphql";
 import {executeGraphql} from "@/api/graphqlApi";
+import {notFound} from "next/navigation";
 
 type ProductResponseItem = {
     id: string,
@@ -175,22 +176,27 @@ export const getProductsByCategorySlug=async (categorySlug: string)=>{
 
 }
 
-export const getProductById=async (productId: string) => {
+export const getProductById=async (productId: string): Promise<ProductItemType> => {
     const res = await executeGraphql(
         ProductGetByIdDocument,
         {id: productId}
     )
 
     const product = res.product;
+
+    if (!product) {
+        notFound();
+    }
+
     return {
-        id: product?.id,
-        name: product?.name,
-        category: product?.categories[0]?.name || "",
-        price: product?.price,
-        description: product?.description,
+        id: product.id,
+        name: product.name,
+        category: product.categories[0].name || "",
+        price: product.price,
+        description: product.description,
         coverImage: {
-            src: product?.images[0]?.url || "",
-            alt: product?.name,
+            src: product.images[0].url || "",
+            alt: product.name,
         },
     };
 };
