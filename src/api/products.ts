@@ -191,7 +191,7 @@ export const getProductById=async (productId: string): Promise<ProductItemType> 
     return {
         id: product.id,
         name: product.name,
-        category: product.categories[0].name || "",
+        category: product.categories[0]?.name || "",
         price: product.price,
         description: product.description,
         coverImage: {
