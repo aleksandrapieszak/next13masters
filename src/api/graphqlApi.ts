@@ -24,8 +24,11 @@ export const executeGraphql = async <TResult, TVariables> (query: TypedDocumentS
     const graphqlResponse =
         (await res.json()) as GraphqlResponse<TResult>;
 
-    if (graphqlResponse.errors){
-        throw TypeError(graphqlResponse.errors[0].message)
+    if (graphqlResponse.errors) {
+        const errorMessage = graphqlResponse.errors[0] ? graphqlResponse.errors[0].message : "";
+        throw TypeError(`GraphQL Error: ${errorMessage}`, {
+            cause: graphqlResponse.errors,
+        });
     }
 
     return graphqlResponse.data;
