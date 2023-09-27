@@ -1,9 +1,9 @@
 import React, {Suspense} from "react";
 import type {Metadata} from "next";
+import {notFound} from "next/navigation";
 import {getProductById, getProductList} from "@/api/products";
 import {SuggestedProductsList} from "@/ui/organisms/SuggestedProducts";
 import {ProductItemWithImage} from "@/ui/molecules/ProductItemWithImage";
-import {notFound} from "next/navigation";
 
 
 //statyczne generowanie stron jesli jest ich niewiele

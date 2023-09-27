@@ -1,22 +1,21 @@
+import {notFound} from "next/navigation";
 import type {ProductItemType} from "@/ui/types";
 import {
     GetProductsByPageDocument, ProductGetByIdDocument,
     ProductsGetByCategorySlugDocument,
     ProductsGetListDocument,
-    TypedDocumentString
 } from "@/gql/graphql";
 import {executeGraphql} from "@/api/graphqlApi";
-import {notFound} from "next/navigation";
 
-type ProductResponseItem = {
-    id: string,
-    title: string,
-    price: number,
-    description: string
-    category: string
-    image: string
-
-}
+// type ProductResponseItem = {
+//     id: string,
+//     title: string,
+//     price: number,
+//     description: string
+//     category: string
+//     image: string
+//
+// }
 
 // export const getProductList = async (): Promise<ProductItemType[]> => {
 //

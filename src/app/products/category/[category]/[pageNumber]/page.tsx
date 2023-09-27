@@ -1,5 +1,3 @@
-import {executeGraphql} from "@/api/graphqlApi";
-import {ProductsGetByCategorySlugDocument} from "@/gql/graphql";
 import {ProductList} from "@/ui/organisms/ProductList";
 import {notFound} from "next/navigation";
 import {getProductsByCategorySlug} from "@/api/products";
