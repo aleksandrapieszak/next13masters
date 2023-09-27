@@ -6,7 +6,7 @@ type ProductItemProps = {
     product: ProductItemType
 }
 export const ProductItemWithImage = ({product}:
-                                                  ProductItemType) => {
+                                                  ProductItemProps) => {
     return (
             <div className="rounded-md text-center">
                 <Link href={`/product/${product.id}`}>
