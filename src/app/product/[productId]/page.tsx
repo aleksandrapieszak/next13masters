@@ -21,15 +21,15 @@ export const generateMetadata = async ({
     params: { productId: string };
 }): Promise<Metadata> => {
     const product = await getProductById(params.productId);
-    // return {
-    //     title: ,
-    //     description: product?.description,
-    //     openGraph: {
-    //         title: product?.name,
-    //         description: product?.description,
-    //         images: [{ url: product?.coverImage?.src || '' }]
-    //     },
-    // };
+    return {
+        title: product?.name,
+        description: product?.description,
+        openGraph: {
+            title: product?.name,
+            description: product?.description,
+            images: [{ url: product?.images[0].url || '' }]
+        },
+    };
 };
 
 export default async function SingleProductPage({params}: { params: {productId: string }}) {
