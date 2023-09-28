@@ -1,5 +1,5 @@
 query GetProductsByPage($skip: Int!, $first: Int!) {
     products(skip: $skip, first: $first) {
-        ...ProductListItemFragment
+        ...ProductListItem
     }
 }

@@ -1,13 +1,13 @@
 import {ProductPrice} from "@/ui/atoms/ProductPrice";
 import {ProductTitle} from "@/ui/atoms/ProductTitle";
 import {ProductCategory} from "@/ui/atoms/ProductCategory";
-import type {ProductItemType} from "@/ui/types";
+import {ProductListItemFragment} from "@/gql/graphql";
 
 type ProductItemProps = {
-    product: ProductItemType
+    product: ProductListItemFragment
     }
 export const ProductItem = ({
-                                product: {category, name, price}
+                                product: {categories, name, price}
                                 }: ProductItemProps) => {
 
 
@@ -15,7 +15,7 @@ export const ProductItem = ({
         <div className="mt-2">
             <ProductPrice price={price}/>
             <ProductTitle name={name}/>
-            <ProductCategory category={category}/>
+            {categories[0] && (<ProductCategory category={categories[0].name}/>)}
         </div>
     )
 }

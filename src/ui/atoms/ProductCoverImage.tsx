@@ -1,8 +1,10 @@
+import NextImage from "next/image";
+
 export const ProductCoverImage = ({src,alt}:{src:string, alt:string}) => {
     return (
 
                     <div className="rounded-md bg-white ">
-                        <img
+                        <NextImage
                             width={256}
                             height={256}
                             src={src}

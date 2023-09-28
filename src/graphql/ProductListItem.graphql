@@ -1,4 +1,4 @@
-fragment ProductListItemFragment on Product{
+fragment ProductListItem on Product{
     id
     name
     description

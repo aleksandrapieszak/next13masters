@@ -4,7 +4,7 @@ import {Inter} from "next/font/google";
 import React from "react";
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
 
-const inter = Inter({subsets: ["latin"]});
+const inter = Inter({subsets: ["latin", "latin-ext"]});
 
 export const metadata: Metadata = {
     title: "Products",
