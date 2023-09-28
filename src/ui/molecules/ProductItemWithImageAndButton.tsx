@@ -2,7 +2,7 @@ import Link from "next/link";
 import {ProductCoverImage} from "@/ui/atoms/ProductCoverImage";
 import {AddToCardButton} from "@/ui/atoms/buttons/AddToCardButton";
 import {ProductItem} from "@/ui/molecules/ProductItem";
-import {ProductListItemFragment} from "@/gql/graphql";
+import type {ProductListItemFragment} from "@/gql/graphql";
 //produkt ze wszystkimi właściwościami nawet guzikiem
 type ProductItemProps = {
     product: ProductListItemFragment

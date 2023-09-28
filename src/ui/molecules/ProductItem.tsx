@@ -1,7 +1,7 @@
 import {ProductPrice} from "@/ui/atoms/ProductPrice";
 import {ProductTitle} from "@/ui/atoms/ProductTitle";
 import {ProductCategory} from "@/ui/atoms/ProductCategory";
-import {ProductListItemFragment} from "@/gql/graphql";
+import type {ProductListItemFragment} from "@/gql/graphql";
 
 type ProductItemProps = {
     product: ProductListItemFragment

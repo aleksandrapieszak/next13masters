@@ -1,5 +1,5 @@
 import {ProductItemWithImageAndButton} from "@/ui/molecules/ProductItemWithImageAndButton";
-import {ProductListItemFragment} from "@/gql/graphql";
+import type {ProductListItemFragment} from "@/gql/graphql";
 
 export const ProductList = ({products}:{products: ProductListItemFragment[]}) => {
     return (
