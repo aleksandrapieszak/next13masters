@@ -17,7 +17,7 @@ import {Pagination} from "@/ui/molecules/Pagination";
 // }
 export const generateStaticParams = async ({params}:{params: {category:string, pageNumber: number}}) => {
     const products = await getProductsByCategorySlug(params.category);
-    const pagesAmount = Math.ceil(products?.length / 5);
+    const pagesAmount = products ? Math.ceil(products?.length / 5): 0;
 
     const pages = [];
     for (let i = 1; i <= pagesAmount; i++) {
