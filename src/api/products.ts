@@ -141,7 +141,6 @@ export const getProductVariants = async (id: ProductListItemFragment["id"]) => {
         id: id,
     });
 
-    console.log(graphqlResponse.product)
     return graphqlResponse.product?.variants;
 };
 
