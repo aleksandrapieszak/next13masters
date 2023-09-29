@@ -1,5 +1,5 @@
 import {ProductList} from "@/ui/organisms/ProductList";
-import {ProductListItemFragment} from "@/gql/graphql";
+import type {ProductListItemFragment} from "@/gql/graphql";
 
 // const sleep = (ms:number) => new Promise((resolve)=>setTimeout(resolve,ms))
 type SuggestedProductListProps = {
