@@ -150,5 +150,5 @@ export const getProductsSuggestedList = async (collection: string) => {
         name: collection,
     });
 
-    return graphqlResponse.products;
+    return graphqlResponse?.products;
 };

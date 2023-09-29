@@ -21,7 +21,7 @@ export default async function CategoryProductPageNumber({params}: { params: {cat
 
     const productInPage = 6;
     const totalProducts = (await getProductsByCategorySlug(params.category))
-    const totalProductsLength = totalProducts?.length;
+    const totalProductsLength = totalProducts?.length ?? 0;
     const totalPages = Math.ceil(totalProductsLength/productInPage);
 
     const productsByPage = await getProductsCategoryByPage(params.category, params.pageNumber)

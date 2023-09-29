@@ -42,7 +42,7 @@ export default async function SingleProductPage({params}: { params: {productId: 
         notFound();
     }
 
-    const suggestedProducts = product.categories[0]
+    const suggestedProducts = product?.categories[0]
         ? await getProductsSuggestedList(product.categories[0].name)
         : null;
 
