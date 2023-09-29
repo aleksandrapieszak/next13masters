@@ -3,7 +3,6 @@ import type {Metadata} from "next";
 import {notFound} from "next/navigation";
 import {getProductById, getProductList, getProductsSuggestedList} from "@/api/products";
 import {SuggestedProductsList} from "@/ui/organisms/SuggestedProducts";
-import {ProductItemWithImage} from "@/ui/molecules/ProductItemWithImage";
 import {SingleProductVariantsList} from "@/ui/molecules/SingleProductVariantsList";
 import {ProductCoverImage} from "@/ui/atoms/ProductCoverImage";
 
