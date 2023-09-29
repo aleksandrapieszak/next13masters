@@ -4,9 +4,17 @@ import {ProductList} from "@/ui/organisms/ProductList";
 import {
     getCategoriesBySlug,
     getProductsByCategorySlug,
-    getProductsCategoryByPage
+    getProductsCategoryByPage,
 } from "@/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
+
+export const generateStaticParams = async({params}:{params: {category:string}}) => {
+    if (params.category === "t-shirts"){
+        return [{"pageNumber": "1"}, {"pageNumber": "2"}]
+    }else {
+        return[{"pageNumber":"1"}]
+    }
+}
 
 export const generateMetadata = async ({params}:{params: {category:string}}): Promise<Metadata> => {
     const category = await getCategoriesBySlug(params.category);
@@ -16,28 +24,8 @@ export const generateMetadata = async ({params}:{params: {category:string}}): Pr
     };
 };
 
-// export const generateStaticParams = async ({params}: { params: {category: string}}) => {
-//     const products = await getCategories()
-//     const pagesAmount = Math.ceil(products?.length / 5);
-//
-//     const pages = [];
-//     for (let i = 1; i <= pagesAmount; i++) {
-//         pages.push({ pageNumber: i.toString() });
-//     }
-//
-//     return pages;
-// // }
-// export const generateStaticParams = async () => {
-//     const categories = await getCategories();
-//     return categories.map((category) => ({
-//         categoriesName: category.name
-//     }))
-// }
-export const generateStaticParams = async () => {
-    return Array.from({ length: 10 }, (_, index) => ({
-        pagination: `${index + 1}`,
-    }));
-};
+
+
 export default async function CategoryProductPageNumber({params}: { params: {category: string, pageNumber: number }}) {
 
     const products = await getProductsByCategorySlug(params.category)
