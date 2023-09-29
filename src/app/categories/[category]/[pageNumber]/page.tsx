@@ -3,12 +3,16 @@ import {ProductList} from "@/ui/organisms/ProductList";
 import {getProductsByCategorySlug, getProductsCategoryByPage} from "@/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
 
-export const generateStaticParams = async({params}:{params: {category:string}}) => {
-    if (params.category === "t-shirts"){
-      return [{"pageNumber": "1"}, {"pageNumber": "2"}]
-    }else {
-        return[{"pageNumber":"1"}]
+export const generateStaticParams = async ({params}:{params: {category:string}}) => {
+    const products = await getProductsByCategorySlug(params.category)
+    const pagesAmount = Math.ceil(products?.length / 5);
+
+    const pages = [];
+    for (let i = 1; i <= pagesAmount; i++) {
+        pages.push({ pageNumber: i.toString() });
     }
+
+    return pages;
 }
 
 export default async function CategoryProductPageNumber({params}: { params: {category: string, pageNumber: number }}) {

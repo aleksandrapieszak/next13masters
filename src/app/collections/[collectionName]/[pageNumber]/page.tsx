@@ -39,7 +39,6 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
     }
 
     return (
-        /*className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8"*/
         <section className="flex min-h-screen flex-col items-center p-12" data-testid="collections">
             <h2>{collection?.name}</h2>
             <ProductList products={productsByPage} />
