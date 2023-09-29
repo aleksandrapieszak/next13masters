@@ -27,14 +27,18 @@ export const generateMetadata = async ({params}:{params: {category:string}}): Pr
 //     }
 //
 //     return pages;
+// // }
+// export const generateStaticParams = async () => {
+//     const categories = await getCategories();
+//     return categories.map((category) => ({
+//         categoriesName: category.name
+//     }))
 // }
 export const generateStaticParams = async () => {
-    const categories = await getCategories();
-    return categories.map((category) => ({
-        categoriesName: category.name
-    }))
-}
-
+    return Array.from({ length: 10 }, (_, index) => ({
+        pagination: `${index + 1}`,
+    }));
+};
 export default async function CategoryProductPageNumber({params}: { params: {category: string, pageNumber: number }}) {
 
     const products = await getProductsByCategorySlug(params.category)
