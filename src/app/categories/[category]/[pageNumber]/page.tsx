@@ -1,11 +1,19 @@
 import {notFound} from "next/navigation";
 import {ProductList} from "@/ui/organisms/ProductList";
-import {getProductsByCategorySlug, getProductsCategoryByPage} from "@/api/products";
+import {getCategoriesBySlug, getProductsByCategorySlug, getProductsCategoryByPage} from "@/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
+import {Metadata} from "next";
 
+export const generateMetadata = async ({params}:{params: {category:string}}): Promise<Metadata> => {
+    const category = await getCategoriesBySlug(params.category);
+
+    return {
+        title: category?.name,
+    };
+};
 export const generateStaticParams = async ({params}:{params: {category:string}}) => {
     const products = await getProductsByCategorySlug(params.category)
-    const pagesAmount = Math.ceil(products?.length / 5);
+    const pagesAmount = products ? Math.ceil(products?.length / 5):0;
 
     const pages = [];
     for (let i = 1; i <= pagesAmount; i++) {
