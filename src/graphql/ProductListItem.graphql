@@ -1,12 +1,39 @@
-fragment ProductListItem on Product{
+#fragment ProductListItem on Product{
+#    id
+#    name
+#    description
+#    categories(first:1){
+#        name
+#    }
+#    images(first:1) {
+#        url
+#    }
+#    price
+#}
+fragment ProductListItem on Product {
     id
     name
+    price
     description
-    categories(first:1){
+    categories(first: 1) {
         name
     }
-    images(first:1) {
-        url
+    images(first: 1) {
+        ...ProductImage
     }
-    price
+}
+
+fragment SingleProductSizeColorVariant on ProductSizeColorVariant {
+    id
+    name
+}
+
+fragment SingleProductColorVariant on ProductColorVariant {
+    id
+    name
+}
+
+fragment SingleProductSizeVariant on ProductSizeVariant {
+    id
+    name
 }

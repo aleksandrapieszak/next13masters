@@ -11,8 +11,8 @@ const nextConfig = {
     redirects: async () =>{
         return [
             {
-                source: "/products/category/t-shirts",
-                destination: "/products/category/t-shirts/1",
+                source: "/products/categories/t-shirts",
+                destination: "/products/categories/t-shirts/1",
                 permanent: false
             }
         ]

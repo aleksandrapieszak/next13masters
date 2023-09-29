@@ -1,9 +1,10 @@
 import React, {Suspense} from "react";
 import type {Metadata} from "next";
 import {notFound} from "next/navigation";
-import {getProductById, getProductList} from "@/api/products";
+import {getProductById, getProductList, getProductsSuggestedList} from "@/api/products";
 import {SuggestedProductsList} from "@/ui/organisms/SuggestedProducts";
 import {ProductItemWithImage} from "@/ui/molecules/ProductItemWithImage";
+import {SingleProductVariantsList} from "@/ui/molecules/SingleProductVariantsList";
 
 
 //statyczne generowanie stron jesli jest ich niewiele
@@ -41,16 +42,21 @@ export default async function SingleProductPage({params}: { params: {productId: 
         notFound();
     }
 
+    const suggestedProducts = product.categories[0]
+        ? await getProductsSuggestedList(product.categories[0].name)
+        : null;
+
     return (
         <>
             <div>
                 <h1>{product.name}</h1>
                 <h3>{product.description}</h3>
                 <ProductItemWithImage product={product}/>
+                <SingleProductVariantsList product={product} />
             </div>
             <aside>
                 <Suspense fallback={"Ładowanie....."}>
-                    <SuggestedProductsList/>
+                    <SuggestedProductsList products={suggestedProducts}/>
                 </Suspense>
             </aside>
         </>

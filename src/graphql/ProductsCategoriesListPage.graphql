@@ -1,0 +1,16 @@
+query GetProductsCategoryByPage($slug: String!, $skip: Int!, $first: Int!) {
+    productsConnection(
+        where: {categories_some: {slug: $slug}},
+        skip: $skip,
+        first: $first
+    ) {
+        edges {
+            node {
+                ...ProductListItem
+            }
+        }
+    }
+}
+
+
+

@@ -1,0 +1,16 @@
+query GetProductsCollectionByPage($slug: String!, $skip: Int!, $first: Int!) {
+    productsConnection(
+        where: {collections_some: {slug: $slug}},
+        skip: $skip,
+        first: $first
+    ) {
+        edges {
+            node {
+                ...ProductListItem
+            }
+        }
+    }
+}
+
+
+
