@@ -1,8 +1,8 @@
 import {notFound} from "next/navigation";
+import {Metadata} from "next";
 import {ProductList} from "@/ui/organisms/ProductList";
 import {getCategoriesBySlug, getProductsByCategorySlug, getProductsCategoryByPage} from "@/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
-import {Metadata} from "next";
 
 export const generateMetadata = async ({params}:{params: {category:string}}): Promise<Metadata> => {
     const category = await getCategoriesBySlug(params.category);
