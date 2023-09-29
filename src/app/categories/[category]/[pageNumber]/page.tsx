@@ -4,7 +4,6 @@ import {ProductList} from "@/ui/organisms/ProductList";
 import {
     getCategories,
     getCategoriesBySlug,
-    getProductList,
     getProductsByCategorySlug,
     getProductsCategoryByPage
 } from "@/api/products";
