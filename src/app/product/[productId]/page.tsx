@@ -56,8 +56,11 @@ export default async function SingleProductPage({params}: { params: {productId: 
             </div>
             <aside>
                 <Suspense fallback={"Ładowanie....."}>
-                    <SuggestedProductsList products={suggestedProducts}/>
-                </Suspense>
+                    {suggestedProducts ? (
+                        <SuggestedProductsList products={suggestedProducts}/>
+                    ) : (
+                        <div>Brak sugerowanych produktów.</div>
+                    )}                </Suspense>
             </aside>
         </>
     )
