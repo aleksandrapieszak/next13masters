@@ -1,7 +1,13 @@
 import {notFound} from "next/navigation";
 import type {Metadata} from "next";
 import {ProductList} from "@/ui/organisms/ProductList";
-import {getCategoriesBySlug, getProductsByCategorySlug, getProductsCategoryByPage} from "@/api/products";
+import {
+    getCategories,
+    getCategoriesBySlug,
+    getProductList,
+    getProductsByCategorySlug,
+    getProductsCategoryByPage
+} from "@/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
 
 export const generateMetadata = async ({params}:{params: {category:string}}): Promise<Metadata> => {
@@ -11,16 +17,23 @@ export const generateMetadata = async ({params}:{params: {category:string}}): Pr
         title: category?.name,
     };
 };
-export const generateStaticParams = async ({params}:{params: {category:string}}) => {
-    const products = await getProductsByCategorySlug(params.category)
-    const pagesAmount = products ? Math.ceil(products?.length / 5):0;
 
-    const pages = [];
-    for (let i = 1; i <= pagesAmount; i++) {
-        pages.push({ pageNumber: i.toString() });
-    }
-
-    return pages;
+// export const generateStaticParams = async ({params}: { params: {category: string}}) => {
+//     const products = await getCategories()
+//     const pagesAmount = Math.ceil(products?.length / 5);
+//
+//     const pages = [];
+//     for (let i = 1; i <= pagesAmount; i++) {
+//         pages.push({ pageNumber: i.toString() });
+//     }
+//
+//     return pages;
+// }
+export const generateStaticParams = async () => {
+    const categories = await getCategories();
+    return categories.map((category) => ({
+        categoriesName: category.name
+    }))
 }
 
 export default async function CategoryProductPageNumber({params}: { params: {category: string, pageNumber: number }}) {
