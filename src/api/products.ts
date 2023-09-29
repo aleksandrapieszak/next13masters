@@ -1,4 +1,5 @@
 import {notFound} from "next/navigation";
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import {
     CategoriesGetByCategorySlugDocument,
     CategoriesGetListDocument,
@@ -18,6 +19,7 @@ import {
     SingleProductSizeVariantFragment,
 
 } from "@/gql/graphql";
+
 import {executeGraphql} from "@/api/graphqlApi";
 
 export const getProductList = async () => {
