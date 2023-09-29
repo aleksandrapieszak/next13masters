@@ -8,7 +8,8 @@ import {
 } from "@/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
 
-export const generateStaticParams = async({params}:{params: {category:string}}) => {
+export const generateStaticParams = async({params}:{params: {category:string, pageNumber: number}}) => {
+    console.log(params.category);
     if (params.category === "t-shirts"){
         return [{"pageNumber": "1"}, {"pageNumber": "2"}]
     }else {
