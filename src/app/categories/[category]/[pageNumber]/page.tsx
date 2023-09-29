@@ -2,19 +2,30 @@ import {notFound} from "next/navigation";
 import type {Metadata} from "next";
 import {ProductList} from "@/ui/organisms/ProductList";
 import {
-    getCategoriesBySlug,
+    getCategoriesBySlug, getProductList,
     getProductsByCategorySlug,
     getProductsCategoryByPage,
 } from "@/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
 
-export const generateStaticParams = async({params}:{params: {category:string, pageNumber: number}}) => {
-    console.log(params.category);
-    if (params.category === "t-shirts"){
-        return [{"pageNumber": "1"}, {"pageNumber": "2"}]
-    }else {
-        return[{"pageNumber":"1"}]
+// export const generateStaticParams = async({params}:{params: {category:string, pageNumber: number}}) => {
+//     if (params.category === "t-shirts"){
+//         return [{"pageNumber": "1"}, {"pageNumber": "2"}]
+//     }else {
+//         return[{"pageNumber":"1"}]
+//     }
+// }
+export const generateStaticParams = async ({params}:{params: {category:string, pageNumber: number}}) => {
+    const products = await getProductsByCategorySlug(params.category);
+    const pagesAmount = Math.ceil(products?.length / 5);
+
+    const pages = [];
+    for (let i = 1; i <= pagesAmount; i++) {
+        pages.push({ pageNumber: i.toString() });
     }
+
+    console.log(pages)
+    return pages;
 }
 
 export const generateMetadata = async ({params}:{params: {category:string}}): Promise<Metadata> => {
