@@ -5,6 +5,7 @@ import {getProductById, getProductList, getProductsSuggestedList} from "@/api/pr
 import {SuggestedProductsList} from "@/ui/organisms/SuggestedProducts";
 import {ProductItemWithImage} from "@/ui/molecules/ProductItemWithImage";
 import {SingleProductVariantsList} from "@/ui/molecules/SingleProductVariantsList";
+import {ProductCoverImage} from "@/ui/atoms/ProductCoverImage";
 
 
 //statyczne generowanie stron jesli jest ich niewiele
@@ -51,7 +52,9 @@ export default async function SingleProductPage({params}: { params: {productId: 
             <div>
                 <h1>{product.name}</h1>
                 <h3>{product.description}</h3>
-                <ProductItemWithImage product={product}/>
+                <h2>{product.price} zł</h2>
+                {product.images[0] &&(
+                     <ProductCoverImage src={product.images[0].url} alt={""}/>)}
                 <SingleProductVariantsList product={product} />
             </div>
             <aside>

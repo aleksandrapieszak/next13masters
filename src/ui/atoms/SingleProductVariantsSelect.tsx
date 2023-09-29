@@ -34,6 +34,8 @@ export const SingleProductVariantsSelect = ({ variants }: SingleProductVariantPr
     return (
         <>
             {variants && variants[0] && (
+                <div className="p-10">
+                    <p className="text-left mb-6">Choose your color and/or size:</p>
                 <select
                     name="variants-size"
                     id="variants-size-id"
@@ -49,6 +51,7 @@ export const SingleProductVariantsSelect = ({ variants }: SingleProductVariantPr
                         </option>
                     ))}
                 </select>
+                </div>
             )}
         </>
     );
