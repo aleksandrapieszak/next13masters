@@ -135,14 +135,24 @@ export const getProductsCollectionByPage = async (collectionSlug:string, page: n
     return graphqlResponse.productsConnection.edges.map(edge => edge.node);
 
 };
-
 export const getProductVariants = async (id: ProductListItemFragment["id"]) => {
     const graphqlResponse = await executeGraphql(ProductGetVariantsListDocument, {
         id: id,
     });
 
-    return graphqlResponse.product?.variants;
+    return graphqlResponse.product?.variants as
+        | SingleProductColorVariantFragment[]
+        | SingleProductSizeColorVariantFragment[]
+        | SingleProductSizeVariantFragment[]
+        | undefined;
 };
+// export const getProductVariants = async (id: ProductListItemFragment["id"]) => {
+//     const graphqlResponse = await executeGraphql(ProductGetVariantsListDocument, {
+//         id: id,
+//     });
+//
+//     return graphqlResponse.product?.variants;
+// };
 
 export const getProductsSuggestedList = async (collection: string) => {
     const graphqlResponse = await executeGraphql(ProductsGetSuggestedListDocument, {

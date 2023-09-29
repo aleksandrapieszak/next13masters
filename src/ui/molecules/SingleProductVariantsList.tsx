@@ -8,7 +8,5 @@ type SingleProductVariantsProps = {
 
 export const SingleProductVariantsList = async ({ product }: SingleProductVariantsProps) => {
     const variants = await getProductVariants(product.id);
-
-
     return <SingleProductVariantsSelect variants={variants} />;
 };

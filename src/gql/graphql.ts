@@ -10829,7 +10829,7 @@ export type ProductGetByIdQueryVariables = Exact<{
 }>;
 
 
-export type ProductGetByIdQuery = { __typename?: 'Query', product?: { __typename?: 'Product', id: string, name: string, description: string, price: number, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> } | null };
+export type ProductGetByIdQuery = { __typename?: 'Query', product?: { __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> } | null };
 
 export type ProductGetVariantsListQueryVariables = Exact<{
   id: Scalars['ID']['input'];
@@ -10838,7 +10838,7 @@ export type ProductGetVariantsListQueryVariables = Exact<{
 
 export type ProductGetVariantsListQuery = { __typename?: 'Query', product?: { __typename?: 'Product', variants: Array<{ __typename?: 'ProductColorVariant', id: string, name: string } | { __typename?: 'ProductSizeColorVariant', id: string, name: string } | { __typename?: 'ProductSizeVariant', id: string, name: string }> } | null };
 
-export type SingleProductItemFragment = { __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> };
+export type SingleProductItemFragment = { __typename?: 'Product', id: string, name: string, description: string, price: number, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> };
 
 export type SingleProductSizeColorVariantFragment = { __typename?: 'ProductSizeColorVariant', id: string, name: string };
 
@@ -10846,7 +10846,7 @@ export type SingleProductColorVariantFragment = { __typename?: 'ProductColorVari
 
 export type SingleProductSizeVariantFragment = { __typename?: 'ProductSizeVariant', id: string, name: string };
 
-export type ProductListItemFragment = { __typename?: 'Product', id: string, name: string, description: string, price: number, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> };
+export type ProductListItemFragment = { __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> };
 
 export type GetProductsCategoryByPageQueryVariables = Exact<{
   slug: Scalars['String']['input'];
@@ -10855,7 +10855,7 @@ export type GetProductsCategoryByPageQueryVariables = Exact<{
 }>;
 
 
-export type GetProductsCategoryByPageQuery = { __typename?: 'Query', productsConnection: { __typename?: 'ProductConnection', edges: Array<{ __typename?: 'ProductEdge', node: { __typename?: 'Product', id: string, name: string, description: string, price: number, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> } }> } };
+export type GetProductsCategoryByPageQuery = { __typename?: 'Query', productsConnection: { __typename?: 'ProductConnection', edges: Array<{ __typename?: 'ProductEdge', node: { __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> } }> } };
 
 export type GetProductsCollectionByPageQueryVariables = Exact<{
   slug: Scalars['String']['input'];
@@ -10864,26 +10864,26 @@ export type GetProductsCollectionByPageQueryVariables = Exact<{
 }>;
 
 
-export type GetProductsCollectionByPageQuery = { __typename?: 'Query', productsConnection: { __typename?: 'ProductConnection', edges: Array<{ __typename?: 'ProductEdge', node: { __typename?: 'Product', id: string, name: string, description: string, price: number, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> } }> } };
+export type GetProductsCollectionByPageQuery = { __typename?: 'Query', productsConnection: { __typename?: 'ProductConnection', edges: Array<{ __typename?: 'ProductEdge', node: { __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> } }> } };
 
 export type ProductsGetByCategorySlugQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
 
 
-export type ProductsGetByCategorySlugQuery = { __typename?: 'Query', categories: Array<{ __typename?: 'Category', products: Array<{ __typename?: 'Product', id: string, name: string, description: string, price: number, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> }> };
+export type ProductsGetByCategorySlugQuery = { __typename?: 'Query', categories: Array<{ __typename?: 'Category', products: Array<{ __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> }> };
 
 export type ProductsGetListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type ProductsGetListQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, description: string, price: number, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
+export type ProductsGetListQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
 
 export type ProductsGetListByCollectionSlugQueryVariables = Exact<{
   slag: Scalars['String']['input'];
 }>;
 
 
-export type ProductsGetListByCollectionSlugQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, description: string, price: number, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
+export type ProductsGetListByCollectionSlugQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
 
 export type GetProductsByPageQueryVariables = Exact<{
   skip: Scalars['Int']['input'];
@@ -10891,14 +10891,14 @@ export type GetProductsByPageQueryVariables = Exact<{
 }>;
 
 
-export type GetProductsByPageQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, description: string, price: number, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
+export type GetProductsByPageQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
 
 export type ProductsGetSuggestedListQueryVariables = Exact<{
   name: Scalars['String']['input'];
 }>;
 
 
-export type ProductsGetSuggestedListQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, description: string, price: number, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
+export type ProductsGetSuggestedListQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
 
 export class TypedDocumentString<TResult, TVariables>
   extends String
@@ -10918,7 +10918,6 @@ export const SingleProductItemFragmentDoc = new TypedDocumentString(`
     fragment SingleProductItem on Product {
   id
   name
-  price
   description
   categories(first: 1) {
     name
@@ -10926,6 +10925,7 @@ export const SingleProductItemFragmentDoc = new TypedDocumentString(`
   images(first: 1) {
     url
   }
+  price
 }
     `, {"fragmentName":"SingleProductItem"}) as unknown as TypedDocumentString<SingleProductItemFragment, unknown>;
 export const SingleProductSizeColorVariantFragmentDoc = new TypedDocumentString(`
@@ -10950,6 +10950,7 @@ export const ProductListItemFragmentDoc = new TypedDocumentString(`
     fragment ProductListItem on Product {
   id
   name
+  price
   description
   categories(first: 1) {
     name
@@ -10957,7 +10958,6 @@ export const ProductListItemFragmentDoc = new TypedDocumentString(`
   images(first: 1) {
     url
   }
-  price
 }
     `, {"fragmentName":"ProductListItem"}) as unknown as TypedDocumentString<ProductListItemFragment, unknown>;
 export const CategoriesGetByCategorySlugDocument = new TypedDocumentString(`
@@ -11005,6 +11005,7 @@ export const ProductGetByIdDocument = new TypedDocumentString(`
     fragment ProductListItem on Product {
   id
   name
+  price
   description
   categories(first: 1) {
     name
@@ -11012,7 +11013,6 @@ export const ProductGetByIdDocument = new TypedDocumentString(`
   images(first: 1) {
     url
   }
-  price
 }`) as unknown as TypedDocumentString<ProductGetByIdQuery, ProductGetByIdQueryVariables>;
 export const ProductGetVariantsListDocument = new TypedDocumentString(`
     query ProductGetVariantsList($id: ID!) {
@@ -11059,6 +11059,7 @@ export const GetProductsCategoryByPageDocument = new TypedDocumentString(`
     fragment ProductListItem on Product {
   id
   name
+  price
   description
   categories(first: 1) {
     name
@@ -11066,7 +11067,6 @@ export const GetProductsCategoryByPageDocument = new TypedDocumentString(`
   images(first: 1) {
     url
   }
-  price
 }`) as unknown as TypedDocumentString<GetProductsCategoryByPageQuery, GetProductsCategoryByPageQueryVariables>;
 export const GetProductsCollectionByPageDocument = new TypedDocumentString(`
     query GetProductsCollectionByPage($slug: String!, $skip: Int!, $first: Int!) {
@@ -11085,6 +11085,7 @@ export const GetProductsCollectionByPageDocument = new TypedDocumentString(`
     fragment ProductListItem on Product {
   id
   name
+  price
   description
   categories(first: 1) {
     name
@@ -11092,7 +11093,6 @@ export const GetProductsCollectionByPageDocument = new TypedDocumentString(`
   images(first: 1) {
     url
   }
-  price
 }`) as unknown as TypedDocumentString<GetProductsCollectionByPageQuery, GetProductsCollectionByPageQueryVariables>;
 export const ProductsGetByCategorySlugDocument = new TypedDocumentString(`
     query ProductsGetByCategorySlug($slug: String!) {
@@ -11105,6 +11105,7 @@ export const ProductsGetByCategorySlugDocument = new TypedDocumentString(`
     fragment ProductListItem on Product {
   id
   name
+  price
   description
   categories(first: 1) {
     name
@@ -11112,7 +11113,6 @@ export const ProductsGetByCategorySlugDocument = new TypedDocumentString(`
   images(first: 1) {
     url
   }
-  price
 }`) as unknown as TypedDocumentString<ProductsGetByCategorySlugQuery, ProductsGetByCategorySlugQueryVariables>;
 export const ProductsGetListDocument = new TypedDocumentString(`
     query ProductsGetList {
@@ -11123,6 +11123,7 @@ export const ProductsGetListDocument = new TypedDocumentString(`
     fragment ProductListItem on Product {
   id
   name
+  price
   description
   categories(first: 1) {
     name
@@ -11130,7 +11131,6 @@ export const ProductsGetListDocument = new TypedDocumentString(`
   images(first: 1) {
     url
   }
-  price
 }`) as unknown as TypedDocumentString<ProductsGetListQuery, ProductsGetListQueryVariables>;
 export const ProductsGetListByCollectionSlugDocument = new TypedDocumentString(`
     query ProductsGetListByCollectionSlug($slag: String!) {
@@ -11141,6 +11141,7 @@ export const ProductsGetListByCollectionSlugDocument = new TypedDocumentString(`
     fragment ProductListItem on Product {
   id
   name
+  price
   description
   categories(first: 1) {
     name
@@ -11148,7 +11149,6 @@ export const ProductsGetListByCollectionSlugDocument = new TypedDocumentString(`
   images(first: 1) {
     url
   }
-  price
 }`) as unknown as TypedDocumentString<ProductsGetListByCollectionSlugQuery, ProductsGetListByCollectionSlugQueryVariables>;
 export const GetProductsByPageDocument = new TypedDocumentString(`
     query GetProductsByPage($skip: Int!, $first: Int!) {
@@ -11159,6 +11159,7 @@ export const GetProductsByPageDocument = new TypedDocumentString(`
     fragment ProductListItem on Product {
   id
   name
+  price
   description
   categories(first: 1) {
     name
@@ -11166,7 +11167,6 @@ export const GetProductsByPageDocument = new TypedDocumentString(`
   images(first: 1) {
     url
   }
-  price
 }`) as unknown as TypedDocumentString<GetProductsByPageQuery, GetProductsByPageQueryVariables>;
 export const ProductsGetSuggestedListDocument = new TypedDocumentString(`
     query ProductsGetSuggestedList($name: String!) {
@@ -11177,6 +11177,7 @@ export const ProductsGetSuggestedListDocument = new TypedDocumentString(`
     fragment ProductListItem on Product {
   id
   name
+  price
   description
   categories(first: 1) {
     name
@@ -11184,5 +11185,4 @@ export const ProductsGetSuggestedListDocument = new TypedDocumentString(`
   images(first: 1) {
     url
   }
-  price
 }`) as unknown as TypedDocumentString<ProductsGetSuggestedListQuery, ProductsGetSuggestedListQueryVariables>;
