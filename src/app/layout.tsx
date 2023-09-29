@@ -1,7 +1,7 @@
 import "./globals.css";
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
-import React, {useState} from "react";
+import React from "react";
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
 import {getCategories, getCollections} from "@/api/products";
 

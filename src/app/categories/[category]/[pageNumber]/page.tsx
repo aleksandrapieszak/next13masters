@@ -1,6 +1,6 @@
 import {notFound} from "next/navigation";
 import {ProductList} from "@/ui/organisms/ProductList";
-import {getProductList, getProductsByCategorySlug, getProductsByPage, getProductsCategoryByPage} from "@/api/products";
+import {getProductsByCategorySlug, getProductsCategoryByPage} from "@/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
 
 export const generateStaticParams = async({params}:{params: {category:string}}) => {

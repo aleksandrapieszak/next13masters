@@ -9,14 +9,16 @@ import {
     GetProductsCollectionByPageDocument,
     ProductGetByIdDocument,
     ProductGetVariantsListDocument,
-    ProductListItemFragment,
     ProductsGetByCategorySlugDocument,
     ProductsGetListByCollectionSlugDocument,
     ProductsGetListDocument, ProductsGetSuggestedListDocument,
+} from "@/gql/graphql";
+import type {
+    ProductListItemFragment,
     SingleProductColorVariantFragment,
     SingleProductSizeColorVariantFragment,
     SingleProductSizeVariantFragment,
-} from "@/gql/graphql";
+}from "@/gql/graphql"
 import {executeGraphql} from "@/api/graphqlApi";
 
 export const getProductList = async () => {

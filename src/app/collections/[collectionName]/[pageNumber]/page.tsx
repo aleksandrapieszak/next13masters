@@ -2,8 +2,7 @@ import { notFound } from "next/navigation";
 import { type Metadata } from "next";
 import {
     getCollectionsBySlug,
-    getProductsByCategorySlug,
-    getProductsCategoryByPage, getProductsCollectionByPage,
+    getProductsCollectionByPage,
     getProductsListByCollectionSlug
 } from "@/api/products";
 import {ProductList} from "@/ui/organisms/ProductList";

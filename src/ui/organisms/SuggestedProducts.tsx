@@ -1,5 +1,4 @@
 import {ProductList} from "@/ui/organisms/ProductList";
-import {getProductList} from "@/api/products";
 import {ProductListItemFragment} from "@/gql/graphql";
 
 // const sleep = (ms:number) => new Promise((resolve)=>setTimeout(resolve,ms))
