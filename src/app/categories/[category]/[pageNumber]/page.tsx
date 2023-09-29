@@ -1,5 +1,5 @@
 import {notFound} from "next/navigation";
-import {Metadata} from "next";
+import type {Metadata} from "next";
 import {ProductList} from "@/ui/organisms/ProductList";
 import {getCategoriesBySlug, getProductsByCategorySlug, getProductsCategoryByPage} from "@/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
