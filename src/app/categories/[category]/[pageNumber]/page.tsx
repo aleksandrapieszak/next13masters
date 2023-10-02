@@ -47,7 +47,7 @@ export default async function CategoryProductPageNumber({params}: { params: {cat
 
     const productsByPage = await getProductsCategoryByPage(params.category, params.pageNumber)
 
-    const category = await getCategoriesBySlug(params.categoryName);
+    const category = await getCategoriesBySlug(params.category);
 
     return (
         <>
