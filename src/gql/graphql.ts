@@ -10893,6 +10893,13 @@ export type GetProductsByPageQueryVariables = Exact<{
 
 export type GetProductsByPageQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
 
+export type ProductsGetListSearchQueryVariables = Exact<{
+  search: Scalars['String']['input'];
+}>;
+
+
+export type ProductsGetListSearchQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, price: number, description: string, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
+
 export type ProductsGetSuggestedListQueryVariables = Exact<{
   name: Scalars['String']['input'];
 }>;
@@ -11168,6 +11175,24 @@ export const GetProductsByPageDocument = new TypedDocumentString(`
     url
   }
 }`) as unknown as TypedDocumentString<GetProductsByPageQuery, GetProductsByPageQueryVariables>;
+export const ProductsGetListSearchDocument = new TypedDocumentString(`
+    query ProductsGetListSearch($search: String!) {
+  products(where: {_search: $search}) {
+    ...ProductListItem
+  }
+}
+    fragment ProductListItem on Product {
+  id
+  name
+  price
+  description
+  categories(first: 1) {
+    name
+  }
+  images(first: 1) {
+    url
+  }
+}`) as unknown as TypedDocumentString<ProductsGetListSearchQuery, ProductsGetListSearchQueryVariables>;
 export const ProductsGetSuggestedListDocument = new TypedDocumentString(`
     query ProductsGetSuggestedList($name: String!) {
   products(where: {categories_some: {name: $name}}, first: 4) {

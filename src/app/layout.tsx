@@ -4,6 +4,7 @@ import {Inter} from "next/font/google";
 import React from "react";
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
 import {getCategories, getCollections} from "@/api/products";
+import {SearchInput} from "@/ui/atoms/SearchInput";
 
 const inter = Inter({subsets: ["latin", "latin-ext"]});
 
@@ -79,6 +80,7 @@ export default async function RootLayout({
                 {/*                    activeClassName={`underline`}>{value.name}</ActiveLink>*/}
                 {/*    </li>*/}
                 {/*))}*/}
+                <SearchInput />
             </ul>
         </nav>
         <section className="sm:py-18 mx-auto flex w-full max-w-2xl flex-grow flex-col px-8 py-12 sm:px-6 lg:max-w-7xl">
