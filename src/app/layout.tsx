@@ -3,7 +3,7 @@ import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import React from "react";
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
-import {getCategories} from "@/api/products";
+import {getCategories, getCollections} from "@/api/products";
 import {SearchInput} from "@/ui/atoms/SearchInput";
 
 const inter = Inter({subsets: ["latin", "latin-ext"]});
@@ -19,7 +19,7 @@ export default async function RootLayout({
     children: React.ReactNode;
 }) {
     const categories = await getCategories();
-    // const collections = await getCollections();
+    const collections = await getCollections();
 
     return (
         <html lang="pl">
@@ -34,46 +34,13 @@ export default async function RootLayout({
                     <ActiveLink exact={false} href={"/products"} className={`text-black hover:text-gray-400`}
                                 activeClassName={`underline`}> All </ActiveLink>
                 </li>
-                {/*<li className="group relative">*/}
-                {/*    <span className="cursor-pointer inline-block text-black hover:text-gray-400 ">*/}
-                {/*        <ActiveLink exact={false} href={"/categories"} className={`text-black hover:text-gray-400`}*/}
-                {/*                    activeClassName={`border-b-4 border-indigo-500`}> Categories </ActiveLink>*/}
-                {/*    </span>*/}
-                {/*    <ul className="absolute left-0 mt-1 bg-white  rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">*/}
-                {/*        {categories.map((category) => (*/}
-                {/*            <li key={category.id}>*/}
-                {/*                <ActiveLink*/}
-                {/*                    exact={false}*/}
-                {/*                    href={`/categories/${category.slug}`}*/}
-                {/*                    className="text-black hover:text-gray-400"*/}
-                {/*                    activeClassName="border-b-4 border-indigo-500"*/}
-                {/*                >*/}
-                {/*                    {category.name}*/}
-                {/*                </ActiveLink>*/}
-                {/*            </li>*/}
-                {/*        ))}*/}
-                {/*    </ul>*/}
-                {/*</li>*/}
-                {/*<li className="group relative">*/}
-                {/*    <span className="cursor-pointer inline-block text-black hover:text-gray-400">*/}
-                {/*        <ActiveLink exact={false} href={"/collections"} className={`text-black hover:text-gray-400`}*/}
-                {/*                    activeClassName={`underline`}> Collections </ActiveLink>*/}
-                {/*    </span>*/}
-                {/*    <ul className="absolute left-0 mt-1 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">*/}
-                {/*        {collections.map((collection) => (*/}
-                {/*            <li key={collection.id}>*/}
-                {/*                <ActiveLink*/}
-                {/*                    exact={false}*/}
-                {/*                    href={`/collections/${collection.slug}`}*/}
-                {/*                    className="text-black hover:text-gray-400"*/}
-                {/*                    activeClassName="underline"*/}
-                {/*                >*/}
-                {/*                    {collection.name}*/}
-                {/*                </ActiveLink>*/}
-                {/*            </li>*/}
-                {/*        ))}*/}
-                {/*    </ul>*/}
-                {/*</li>*/}
+                {collections.map((value) => (
+                    <li key={value.id}>
+                        <ActiveLink exact={false} href={`/collections/${value.slug}`} className={`text-black hover:text-gray-400`}
+                                    activeClassName={`border-b-4 border-indigo-500`}>{value.name}</ActiveLink>
+                    </li>
+                ))}
+
                 {categories.map((value) => (
                     <li key={value.id}>
                         <ActiveLink exact={false} href={`/categories/${value.slug}`} className={`text-black hover:text-gray-400`}
