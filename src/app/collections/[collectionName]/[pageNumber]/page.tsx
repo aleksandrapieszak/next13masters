@@ -19,7 +19,7 @@ export const generateMetadata = async ({ params }: CollectionPageProps): Promise
     const collection = await getCollectionsBySlug(params.collectionName);
 
     return {
-        title: collection?.name,
+        title: ` ${collection?.name} `,
     };
 };
 
