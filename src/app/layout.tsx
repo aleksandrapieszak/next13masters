@@ -36,7 +36,7 @@ export default async function RootLayout({
                                 activeClassName={`underline`}> All </ActiveLink>
                 </li>
                 <li className="group relative">
-                    <span className="cursor-pointer inline-block text-black hover:text-gray-400">
+                    <span className="cursor-pointer inline-block text-black hover:text-gray-400 border-b-4 border-indigo-500">
                         <ActiveLink exact={false} href={"/categories"} className={`text-black hover:text-gray-400`}
                                     activeClassName={`border-b-4 border-indigo-500`}> Categories </ActiveLink>
                     </span>
