@@ -34,25 +34,26 @@ export default async function RootLayout({
                     <ActiveLink exact={false} href={"/products"} className={`text-black hover:text-gray-400`}
                                 activeClassName={`underline`}> All </ActiveLink>
                 </li>
-                <li className="group relative">
-                    <span className="cursor-pointer inline-block text-black hover:text-gray-400 ">
-                        <ActiveLink exact={false} href={"/categories"} className={`text-black hover:text-gray-400`}
-                                    activeClassName={`border-b-4 border-indigo-500`}> Categories </ActiveLink>
-                    </span>
-                    <ul className="absolute left-0 mt-1 bg-white  rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                        {categories.map((category) => (
-                            <li key={category.id}>
-                                <ActiveLink
-                                    href={`/categories/${category.slug}`}
-                                    className="text-black hover:text-gray-400"
-                                    activeClassName="border-b-4 border-indigo-500"
-                                >
-                                    {category.name}
-                                </ActiveLink>
-                            </li>
-                        ))}
-                    </ul>
-                </li>
+                {/*<li className="group relative">*/}
+                {/*    <span className="cursor-pointer inline-block text-black hover:text-gray-400 ">*/}
+                {/*        <ActiveLink exact={false} href={"/categories"} className={`text-black hover:text-gray-400`}*/}
+                {/*                    activeClassName={`border-b-4 border-indigo-500`}> Categories </ActiveLink>*/}
+                {/*    </span>*/}
+                {/*    <ul className="absolute left-0 mt-1 bg-white  rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">*/}
+                {/*        {categories.map((category) => (*/}
+                {/*            <li key={category.id}>*/}
+                {/*                <ActiveLink*/}
+                {/*                    exact={false}*/}
+                {/*                    href={`/categories/${category.slug}`}*/}
+                {/*                    className="text-black hover:text-gray-400"*/}
+                {/*                    activeClassName="border-b-4 border-indigo-500"*/}
+                {/*                >*/}
+                {/*                    {category.name}*/}
+                {/*                </ActiveLink>*/}
+                {/*            </li>*/}
+                {/*        ))}*/}
+                {/*    </ul>*/}
+                {/*</li>*/}
                 {/*<li className="group relative">*/}
                 {/*    <span className="cursor-pointer inline-block text-black hover:text-gray-400">*/}
                 {/*        <ActiveLink exact={false} href={"/collections"} className={`text-black hover:text-gray-400`}*/}
@@ -73,12 +74,12 @@ export default async function RootLayout({
                 {/*        ))}*/}
                 {/*    </ul>*/}
                 {/*</li>*/}
-                {/*{categories.map((value) => (*/}
-                {/*    <li key={value.id}>*/}
-                {/*        <ActiveLink exact={false} href={`/categories/${value.slug}`} className={`text-black hover:text-gray-400`}*/}
-                {/*                    activeClassName={`underline`}>{value.name}</ActiveLink>*/}
-                {/*    </li>*/}
-                {/*))}*/}
+                {categories.map((value) => (
+                    <li key={value.id}>
+                        <ActiveLink exact={false} href={`/categories/${value.slug}`} className={`text-black hover:text-gray-400`}
+                                    activeClassName={`border-b-4 border-indigo-500`}>{value.name}</ActiveLink>
+                    </li>
+                ))}
                 <SearchInput />
             </ul>
         </nav>
