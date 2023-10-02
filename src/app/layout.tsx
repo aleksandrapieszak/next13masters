@@ -45,7 +45,7 @@ export default async function RootLayout({
                             <li key={category.id}>
                                 <Link
                                     href={`/categories/${category.slug}`}
-                                    className={"border-b-4 border-indigo-500"}
+                                    // className={"border-b-4 border-indigo-500"}
                                     // className="text-black hover:text-gray-400"
                                     // activeClassName="underline"
                                 >
