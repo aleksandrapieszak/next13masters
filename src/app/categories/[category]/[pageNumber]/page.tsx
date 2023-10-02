@@ -50,7 +50,7 @@ export default async function CategoryProductPageNumber({params}: { params: {cat
     return (
         <>
             <h1>
-                Produkty z kategorii {params.category}, strona {params.pageNumber}
+                {params.category}
             </h1>
             <ProductList products={productsByPage}/>
             <Pagination totalPages={totalPages} url={`/categories/${params.category}`}/>
