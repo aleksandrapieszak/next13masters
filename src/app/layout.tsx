@@ -19,7 +19,7 @@ export default async function RootLayout({
     children: React.ReactNode;
 }) {
     const categories = await getCategories();
-    const collections = await getCollections();
+    // const collections = await getCollections();
 
     return (
         <html lang="pl">
