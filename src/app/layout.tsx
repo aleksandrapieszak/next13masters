@@ -3,7 +3,7 @@ import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import React from "react";
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
-import {getCategories, getCollections} from "@/api/products";
+import {getCategories} from "@/api/products";
 import {SearchInput} from "@/ui/atoms/SearchInput";
 
 const inter = Inter({subsets: ["latin", "latin-ext"]});
