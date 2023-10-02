@@ -1,5 +1,6 @@
 import "./globals.css";
 import type {Metadata} from "next";
+import Link from "next/link";
 import {Inter} from "next/font/google";
 import React from "react";
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
@@ -42,14 +43,13 @@ export default async function RootLayout({
                     <ul className="absolute left-0 mt-1 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
                         {categories.map((category) => (
                             <li key={category.id}>
-                                <ActiveLink
-                                    exact={false}
+                                <Link
                                     href={`/categories/${category.slug}`}
-                                    className="text-black hover:text-gray-400"
-                                    activeClassName="underline"
+                                    // className="text-black hover:text-gray-400"
+                                    // activeClassName="underline"
                                 >
                                     {category.name}
-                                </ActiveLink>
+                                </Link>
                             </li>
                         ))}
                     </ul>
