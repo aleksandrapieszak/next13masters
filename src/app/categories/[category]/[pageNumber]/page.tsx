@@ -25,7 +25,7 @@ export const generateMetadata = async ({params}:{params: {category:string}}): Pr
     const category = await getCategoriesBySlug(params.category);
 
     return {
-        title: category?.name,
+        title: ` ${category?.name} `,
     };
 };
 
