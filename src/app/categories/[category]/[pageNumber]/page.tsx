@@ -17,15 +17,16 @@ export const generateStaticParams = async ({params}:{params: {category:string, p
         pages.push({ pageNumber: i.toString() });
     }
 
-    console.log(pages)
     return pages;
 }
 
 export const generateMetadata = async ({params}:{params: {category:string}}): Promise<Metadata> => {
     const category = await getCategoriesBySlug(params.category);
 
+    const generatedTitle = ` ${category?.name} `;
+    console.log("Generated title:", generatedTitle);
     return {
-        title: ` ${category?.name} `,
+        title: generatedTitle
     };
 };
 
