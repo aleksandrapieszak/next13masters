@@ -1,6 +1,5 @@
 import "./globals.css";
 import type {Metadata} from "next";
-import Link from "next/link";
 import {Inter} from "next/font/google";
 import React from "react";
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
