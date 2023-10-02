@@ -54,26 +54,26 @@ export default async function RootLayout({
                         ))}
                     </ul>
                 </li>
-                <li className="group relative">
-                    <span className="cursor-pointer inline-block text-black hover:text-gray-400">
-                        <ActiveLink exact={false} href={"/collections"} className={`text-black hover:text-gray-400`}
-                                    activeClassName={`underline`}> Collections </ActiveLink>
-                    </span>
-                    <ul className="absolute left-0 mt-1 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
-                        {collections.map((collection) => (
-                            <li key={collection.id}>
-                                <ActiveLink
-                                    exact={false}
-                                    href={`/collections/${collection.slug}`}
-                                    className="text-black hover:text-gray-400"
-                                    activeClassName="underline"
-                                >
-                                    {collection.name}
-                                </ActiveLink>
-                            </li>
-                        ))}
-                    </ul>
-                </li>
+                {/*<li className="group relative">*/}
+                {/*    <span className="cursor-pointer inline-block text-black hover:text-gray-400">*/}
+                {/*        <ActiveLink exact={false} href={"/collections"} className={`text-black hover:text-gray-400`}*/}
+                {/*                    activeClassName={`underline`}> Collections </ActiveLink>*/}
+                {/*    </span>*/}
+                {/*    <ul className="absolute left-0 mt-1 bg-white border rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">*/}
+                {/*        {collections.map((collection) => (*/}
+                {/*            <li key={collection.id}>*/}
+                {/*                <ActiveLink*/}
+                {/*                    exact={false}*/}
+                {/*                    href={`/collections/${collection.slug}`}*/}
+                {/*                    className="text-black hover:text-gray-400"*/}
+                {/*                    activeClassName="underline"*/}
+                {/*                >*/}
+                {/*                    {collection.name}*/}
+                {/*                </ActiveLink>*/}
+                {/*            </li>*/}
+                {/*        ))}*/}
+                {/*    </ul>*/}
+                {/*</li>*/}
                 {/*{categories.map((value) => (*/}
                 {/*    <li key={value.id}>*/}
                 {/*        <ActiveLink exact={false} href={`/categories/${value.slug}`} className={`text-black hover:text-gray-400`}*/}
