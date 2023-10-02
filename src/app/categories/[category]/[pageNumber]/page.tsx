@@ -47,11 +47,11 @@ export default async function CategoryProductPageNumber({params}: { params: {cat
 
     const productsByPage = await getProductsCategoryByPage(params.category, params.pageNumber)
 
+    const category = await getCategoriesBySlug(params.categoryName);
+
     return (
         <>
-            <h1>
-                {params.category}
-            </h1>
+                <h2>{category?.name}</h2>
             <ProductList products={productsByPage}/>
             <Pagination totalPages={totalPages} url={`/categories/${params.category}`}/>
         </>
