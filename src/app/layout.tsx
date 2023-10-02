@@ -43,14 +43,13 @@ export default async function RootLayout({
                     <ul className="absolute left-0 mt-1 bg-white  rounded shadow-lg opacity-0 group-hover:opacity-100 transition-opacity">
                         {categories.map((category) => (
                             <li key={category.id}>
-                                <Link
+                                <ActiveLink
                                     href={`/categories/${category.slug}`}
-                                    // className={"border-b-4 border-indigo-500"}
-                                    // className="text-black hover:text-gray-400"
-                                    // activeClassName="underline"
+                                    className="text-black hover:text-gray-400"
+                                    activeClassName="border-b-4 border-indigo-500"
                                 >
                                     {category.name}
-                                </Link>
+                                </ActiveLink>
                             </li>
                         ))}
                     </ul>
