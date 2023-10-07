@@ -19,7 +19,7 @@ export default async function RootLayout({
     children: React.ReactNode;
 }) {
     const categories = await getCategories();
-    const cart = await getCartByIdFromCookie();
+    // const cart = await getCartByIdFromCookie();
     // const quantity = cart?.orderItems.length ?? 0;
 
     return (
