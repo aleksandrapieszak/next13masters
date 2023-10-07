@@ -37,14 +37,14 @@ export default async function Cart(){
                                         price={item.product.price}
                                     />
                                 </td>
-                                <td>{formatMoney(item.product.price/100)}</td>
+                                <td>{item.product.price/100}</td>
                             </tr>
                         ))}
                     </tbody>
                     <tfoot>
                     <tr>
                         <td colSpan="2" className="text-right font-bold">Total:</td>
-                        <td>{formatMoney(totalAmount/100)}</td>
+                        <td>{totalAmount/100}</td>
                     </tr>
                     </tfoot>
                 </table>
