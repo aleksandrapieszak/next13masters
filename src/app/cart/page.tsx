@@ -1,5 +1,5 @@
 import {redirect} from "next/navigation";
-import {IncrementProductQuantity} from "@/app/cart/IncrementProductQuantity";
+import {IncrementProductQuantity} from "@/ui/atoms/IncrementProductQuantity";
 import {getCartByIdFromCookie} from "@/api/cart";
 
 export default async function Cart(){
