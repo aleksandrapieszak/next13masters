@@ -9,7 +9,7 @@ export default async function Cart(){
     }
 
     // Obliczanie łącznej kwoty koszyka
-    const totalAmount = cart.orderItems.reduce((acc, item) => {
+    const totalAmount: number = cart.orderItems.reduce((acc, item) => {
         return acc + (item.product ? item.product.price * item.quantity : 0);
     }, 0);
 
