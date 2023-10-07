@@ -8,7 +8,7 @@ export async function changeItemQuantity(
     productId: string,
     quantity: number,
 ) {
-    return executeGraphql({
+    const changeItem =  executeGraphql({
         query: CartSetProductQuantityDocument,
         variables: {
             productId,
@@ -20,4 +20,6 @@ export async function changeItemQuantity(
             tags: ["cart"],
         },
     });
+
+    return changeItem;
 }
