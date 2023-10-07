@@ -41,10 +41,10 @@ export default async function Cart(){
                         ))}
                     </tbody>
                     <tfoot>
-                    <tr>
-                        <td colSpan="2" className="text-right font-bold">Total:</td>
-                        <td>{totalAmount}</td>
-                    </tr>
+                    {/*<tr>*/}
+                    {/*    <td colSpan="2" className="text-right font-bold">Total:</td>*/}
+                    {/*    <td>{totalAmount}</td>*/}
+                    {/*</tr>*/}
                     </tfoot>
                 </table>
             </div>
