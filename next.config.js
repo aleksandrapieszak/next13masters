@@ -3,7 +3,10 @@ const nextConfig = {
     pageExtensions: ['ts','tsx','mdx'],
     experimental: {
         typedRoutes: false,
-        mdxRs: true
+        mdxRs: true,
+        serverActions: true,
+        workerThreads: false,
+        cpus: 1,
     },
     images:{
         domains:["media.graphassets.com"]

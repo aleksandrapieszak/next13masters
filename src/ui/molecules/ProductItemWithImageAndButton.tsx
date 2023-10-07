@@ -1,6 +1,6 @@
 import Link from "next/link";
 import {ProductCoverImage} from "@/ui/atoms/ProductCoverImage";
-import {AddToCardButton} from "@/ui/atoms/buttons/AddToCardButton";
+// import {AddToCardButton} from "@/ui/atoms/buttons/AddToCardButton";
 import {ProductItem} from "@/ui/molecules/ProductItem";
 import type {ProductListItemFragment} from "@/gql/graphql";
 //produkt ze wszystkimi właściwościami nawet guzikiem
@@ -17,7 +17,7 @@ export const ProductItemWithImageAndButton = ({product}:
                         (<ProductCoverImage src={product.images[0].url} alt={""}/>)}
                     <ProductItem product={product}/>
                 </Link>
-                <AddToCardButton title={'Add to card'}/>
+                {/*<AddToCardButton title={'Add to card'}/>*/}
             </div>
         </li>
 

@@ -4665,6 +4665,7 @@ export type OrderItem = Node & {
   createdBy?: Maybe<User>;
   /** Get the document in other stages */
   documentInStages: Array<OrderItem>;
+  hash?: Maybe<Scalars['String']['output']>;
   /** List of OrderItem versions */
   history: Array<Version>;
   /** The unique identifier */
@@ -4761,6 +4762,7 @@ export type OrderItemConnection = {
 
 export type OrderItemCreateInput = {
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
+  hash?: InputMaybe<Scalars['String']['input']>;
   order?: InputMaybe<OrderCreateOneInlineInput>;
   product?: InputMaybe<ProductCreateOneInlineInput>;
   quantity: Scalars['Int']['input'];
@@ -4820,6 +4822,25 @@ export type OrderItemManyWhereInput = {
   documentInStages_every?: InputMaybe<OrderItemWhereStageInput>;
   documentInStages_none?: InputMaybe<OrderItemWhereStageInput>;
   documentInStages_some?: InputMaybe<OrderItemWhereStageInput>;
+  hash?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  hash_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  hash_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  hash_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  hash_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  hash_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  hash_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  hash_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  hash_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  hash_starts_with?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['ID']['input']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']['input']>;
@@ -4911,6 +4932,8 @@ export type OrderItemManyWhereInput = {
 export enum OrderItemOrderByInput {
   CreatedAtAsc = 'createdAt_ASC',
   CreatedAtDesc = 'createdAt_DESC',
+  HashAsc = 'hash_ASC',
+  HashDesc = 'hash_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   PublishedAtAsc = 'publishedAt_ASC',
@@ -4924,6 +4947,7 @@ export enum OrderItemOrderByInput {
 }
 
 export type OrderItemUpdateInput = {
+  hash?: InputMaybe<Scalars['String']['input']>;
   order?: InputMaybe<OrderUpdateOneInlineInput>;
   product?: InputMaybe<ProductUpdateOneInlineInput>;
   quantity?: InputMaybe<Scalars['Int']['input']>;
@@ -4948,6 +4972,7 @@ export type OrderItemUpdateManyInlineInput = {
 };
 
 export type OrderItemUpdateManyInput = {
+  hash?: InputMaybe<Scalars['String']['input']>;
   quantity?: InputMaybe<Scalars['Int']['input']>;
   total?: InputMaybe<Scalars['Int']['input']>;
 };
@@ -5030,6 +5055,25 @@ export type OrderItemWhereInput = {
   documentInStages_every?: InputMaybe<OrderItemWhereStageInput>;
   documentInStages_none?: InputMaybe<OrderItemWhereStageInput>;
   documentInStages_some?: InputMaybe<OrderItemWhereStageInput>;
+  hash?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  hash_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  hash_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  hash_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  hash_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  hash_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  hash_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  hash_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  hash_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  hash_starts_with?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['ID']['input']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']['input']>;
@@ -10800,6 +10844,49 @@ export enum _SystemDateTimeFieldVariation {
   Localization = 'localization'
 }
 
+export type CartAddProductMutationVariables = Exact<{
+  orderId: Scalars['ID']['input'];
+  total: Scalars['Int']['input'];
+  productId: Scalars['ID']['input'];
+}>;
+
+
+export type CartAddProductMutation = { __typename?: 'Mutation', createOrderItem?: { __typename?: 'OrderItem', id: string } | null };
+
+export type CartCreateMutationVariables = Exact<{ [key: string]: never; }>;
+
+
+export type CartCreateMutation = { __typename?: 'Mutation', createOrder?: { __typename?: 'Order', id: string, orderItems: Array<{ __typename?: 'OrderItem', id: string, quantity: number, total: number, product?: { __typename?: 'Product', id: string, name: string, price: number } | null }> } | null };
+
+export type CartGetByIdQueryVariables = Exact<{
+  id: Scalars['ID']['input'];
+}>;
+
+
+export type CartGetByIdQuery = { __typename?: 'Query', order?: { __typename?: 'Order', id: string, orderItems: Array<{ __typename?: 'OrderItem', id: string, quantity: number, total: number, product?: { __typename?: 'Product', id: string, name: string, price: number } | null }> } | null };
+
+export type CartFragment = { __typename?: 'Order', id: string, orderItems: Array<{ __typename?: 'OrderItem', id: string, quantity: number, total: number, product?: { __typename?: 'Product', id: string, name: string, price: number } | null }> };
+
+export type CartSetProductQuantityMutationVariables = Exact<{
+  productId: Scalars['ID']['input'];
+  quantity: Scalars['Int']['input'];
+  hash: Scalars['String']['input'];
+}>;
+
+
+export type CartSetProductQuantityMutation = { __typename?: 'Mutation', updateOrderItem?: { __typename?: 'OrderItem', id: string } | null };
+
+export type CartUpsertProductMutationVariables = Exact<{
+  orderItemId?: InputMaybe<Scalars['ID']['input']>;
+  cartId: Scalars['ID']['input'];
+  productId: Scalars['ID']['input'];
+  total: Scalars['Int']['input'];
+  quantity: Scalars['Int']['input'];
+}>;
+
+
+export type CartUpsertProductMutation = { __typename?: 'Mutation', upsertOrderItem?: { __typename?: 'OrderItem', id: string } | null };
+
 export type CategoriesGetByCategorySlugQueryVariables = Exact<{
   slug: Scalars['String']['input'];
 }>;
@@ -10822,7 +10909,7 @@ export type CollectionsGetCollectionBySlugQuery = { __typename?: 'Query', collec
 export type CollectionsGetListQueryVariables = Exact<{ [key: string]: never; }>;
 
 
-export type CollectionsGetListQuery = { __typename?: 'Query', collections: Array<{ __typename?: 'Collection', id: string, name: string, slug: string }> };
+export type CollectionsGetListQuery = { __typename?: 'Query', collections: Array<{ __typename?: 'Collection', id: string, name: string, slug: string, image: { __typename?: 'Asset', url: string, fileName: string } }> };
 
 export type ProductGetByIdQueryVariables = Exact<{
   id: Scalars['ID']['input'];
@@ -10921,6 +11008,21 @@ export class TypedDocumentString<TResult, TVariables>
     return this.value;
   }
 }
+export const CartFragmentDoc = new TypedDocumentString(`
+    fragment Cart on Order {
+  id
+  orderItems {
+    id
+    quantity
+    total
+    product {
+      id
+      name
+      price
+    }
+  }
+}
+    `, {"fragmentName":"Cart"}) as unknown as TypedDocumentString<CartFragment, unknown>;
 export const SingleProductItemFragmentDoc = new TypedDocumentString(`
     fragment SingleProductItem on Product {
   id
@@ -10967,6 +11069,73 @@ export const ProductListItemFragmentDoc = new TypedDocumentString(`
   }
 }
     `, {"fragmentName":"ProductListItem"}) as unknown as TypedDocumentString<ProductListItemFragment, unknown>;
+export const CartAddProductDocument = new TypedDocumentString(`
+    mutation CartAddProduct($orderId: ID!, $total: Int!, $productId: ID!) {
+  createOrderItem(
+    data: {quantity: 1, total: $total, product: {connect: {id: $productId}}, order: {connect: {id: $orderId}}}
+  ) {
+    id
+  }
+}
+    `) as unknown as TypedDocumentString<CartAddProductMutation, CartAddProductMutationVariables>;
+export const CartCreateDocument = new TypedDocumentString(`
+    mutation CartCreate {
+  createOrder(data: {total: 0}) {
+    ...Cart
+  }
+}
+    fragment Cart on Order {
+  id
+  orderItems {
+    id
+    quantity
+    total
+    product {
+      id
+      name
+      price
+    }
+  }
+}`) as unknown as TypedDocumentString<CartCreateMutation, CartCreateMutationVariables>;
+export const CartGetByIdDocument = new TypedDocumentString(`
+    query CartGetById($id: ID!) {
+  order(where: {id: $id}, stage: DRAFT) {
+    ...Cart
+  }
+}
+    fragment Cart on Order {
+  id
+  orderItems {
+    id
+    quantity
+    total
+    product {
+      id
+      name
+      price
+    }
+  }
+}`) as unknown as TypedDocumentString<CartGetByIdQuery, CartGetByIdQueryVariables>;
+export const CartSetProductQuantityDocument = new TypedDocumentString(`
+    mutation CartSetProductQuantity($productId: ID!, $quantity: Int!, $hash: String!) {
+  updateOrderItem(
+    where: {id: $productId}
+    data: {quantity: $quantity, hash: $hash}
+  ) {
+    id
+  }
+}
+    `) as unknown as TypedDocumentString<CartSetProductQuantityMutation, CartSetProductQuantityMutationVariables>;
+export const CartUpsertProductDocument = new TypedDocumentString(`
+    mutation CartUpsertProduct($orderItemId: ID, $cartId: ID!, $productId: ID!, $total: Int!, $quantity: Int!) {
+  upsertOrderItem(
+    upsert: {create: {quantity: 1, total: $total, order: {connect: {id: $cartId}}, product: {connect: {id: $productId}}}, update: {quantity: $quantity, total: $total}}
+    where: {id: $orderItemId}
+  ) {
+    id
+  }
+}
+    `) as unknown as TypedDocumentString<CartUpsertProductMutation, CartUpsertProductMutationVariables>;
 export const CategoriesGetByCategorySlugDocument = new TypedDocumentString(`
     query CategoriesGetByCategorySlug($slug: String!) {
   categories(where: {slug: $slug}) {
@@ -11000,6 +11169,10 @@ export const CollectionsGetListDocument = new TypedDocumentString(`
     id
     name
     slug
+    image {
+      url
+      fileName
+    }
   }
 }
     `) as unknown as TypedDocumentString<CollectionsGetListQuery, CollectionsGetListQueryVariables>;
