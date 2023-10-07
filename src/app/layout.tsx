@@ -4,7 +4,7 @@ import {Inter} from "next/font/google";
 import React from "react";
 import {getCategories} from "@/api/products";
 import {Nav} from "@/ui/organisms/Nav";
-import {getCartByIdFromCookie} from "@/api/cart";
+// import {getCartByIdFromCookie} from "@/api/cart";
 
 const inter = Inter({subsets: ["latin", "latin-ext"]});
 
