@@ -1,5 +1,5 @@
 "use server"
-
+import {revalidateTag} from "next/cache";
 import {executeGraphql} from "@/api/graphqlApi";
 import {CartSetProductQuantityDocument} from "@/gql/graphql";
 
@@ -15,11 +15,12 @@ export async function changeItemQuantity(
             quantity,
             hash: `${crypto.randomUUID()}-${crypto.randomUUID()}`,
         },
-        cache: "no-store",
-        next: {
-            tags: ["cart"],
-        },
+        // cache: "no-store",
+        // next: {
+        //     tags: ["cart"],
+        // },
     });
 
+    revalidateTag("cart");
     return changeItem;
 }
