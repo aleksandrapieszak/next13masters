@@ -2,7 +2,7 @@ import "./globals.css";
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import React from "react";
-import {getCategories, getCollections} from "@/api/products";
+import {getCategories} from "@/api/products";
 import Nav from "@/ui/organisms/Nav";
 import {getCartByIdFromCookie} from "@/api/cart";
 

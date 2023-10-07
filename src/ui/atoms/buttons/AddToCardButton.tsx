@@ -1,4 +1,4 @@
-import {SingleProductItemFragment} from "@/gql/graphql";
+import {type SingleProductItemFragment} from "@/gql/graphql";
 
 type AddToCartProps = {
     product: SingleProductItemFragment;

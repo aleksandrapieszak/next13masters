@@ -1,5 +1,5 @@
-import {ActiveLink} from "@/ui/atoms/ActiveLink";
 import NextImage from "next/image";
+import {ActiveLink} from "@/ui/atoms/ActiveLink";
 
 type Collections ={
     id: string;

@@ -9,9 +9,9 @@ export default async function Cart(){
     }
 
     // Obliczanie łącznej kwoty koszyka
-    const totalAmount: number = cart.orderItems.reduce((acc, item) => {
-        return acc + (item.product ? item.product.price * item.quantity : 0);
-    }, 0);
+    // const totalAmount: number = cart.orderItems.reduce((acc, item) => {
+    //     return acc + (item.product ? item.product.price * item.quantity : 0);
+    // }, 0);
 
     return(
         <>

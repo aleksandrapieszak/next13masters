@@ -10,6 +10,7 @@ import {
 } from '@heroicons/react/24/outline'
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
 import {SearchInput} from "@/ui/atoms/SearchInput";
+import NextImage from "next/image";
 
 type Category ={
     id: string;
@@ -124,11 +125,11 @@ export default function Nav({categories, quantity
                                     <div className="hidden lg:flex lg:flex-1 lg:items-center">
                                         <a href="#">
                                             <span className="sr-only">Your Company</span>
-                                            <img
-                                                className="h-8 w-auto"
-                                                src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                                alt=""
-                                            />
+                                            {/*<img*/}
+                                            {/*    className="h-8 w-auto"*/}
+                                            {/*    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"*/}
+                                            {/*    alt=""*/}
+                                            {/*/>*/}
                                         </a>
                                     </div>
 
@@ -176,11 +177,12 @@ export default function Nav({categories, quantity
                                     {/* Logo (lg-) */}
                                     <a href="#" className="lg:hidden">
                                         <span className="sr-only">Your Company</span>
-                                        <img
-                                            src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"
-                                            alt=""
-                                            className="h-8 w-auto"
-                                        />
+                                        {/*<NextImage*/}
+                                        {/*    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"*/}
+                                        {/*    alt=""*/}
+                                        {/*    height={}*/}
+                                        {/*    className="h-8 w-auto"*/}
+                                        {/*/>*/}
                                     </a>
 
                                     <div className="flex flex-1 items-center justify-end">
