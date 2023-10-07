@@ -22,8 +22,8 @@ type NavProps =  {
     quantity: number;
 }
 
-export default function Nav({categories, quantity
-                             }: NavProps) {
+export const Nav=({categories, quantity
+                             }: NavProps) => {
     const [open, setOpen] = useState(false)
 
     const handleLinkClick = () => {
