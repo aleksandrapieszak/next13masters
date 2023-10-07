@@ -16,8 +16,8 @@ type Props =  {
     collections: Collections[];
 }
 
-export default function CollectionSection({collections
-                                          }: Props){
+export const CollectionSection = ({collections
+                                          }: Props)=>{
 
     return (
         <section
