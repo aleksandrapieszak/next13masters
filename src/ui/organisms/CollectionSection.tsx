@@ -33,7 +33,7 @@ export default function CollectionSection({collections
 
             <ul className="mt-10 space-y-12 lg:grid lg:grid-cols-3 lg:gap-x-8 lg:space-y-0">
                 {collections.map((collection) => (
-                    <li>
+                    <li key={collection.id}>
                         <ActiveLink href={`/collections/${collection.slug}`} exact>
                             <div
                                 aria-hidden="true"
