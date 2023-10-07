@@ -33,7 +33,7 @@ export default async function Cart(){
                                     <IncrementProductQuantity
                                         itemId={item.id}
                                         quantity={item.quantity}
-                                        price={item.product.price}
+                                        // price={item.product.price}
                                     />
                                 </td>
                                 <td>{item.product.price}</td>
