@@ -5,7 +5,7 @@ import { Dialog, Popover, Tab, Transition } from '@headlessui/react'
 import {
     Bars3Icon,
     MagnifyingGlassIcon,
-    ShoppingBagIcon,
+    // ShoppingBagIcon,
     XMarkIcon,
 } from '@heroicons/react/24/outline'
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
@@ -19,10 +19,10 @@ type Category ={
 
 type NavProps =  {
     categories: Category[];
-    quantity: number;
+    // quantity: number;
 }
 
-export const Nav=({categories, quantity
+export const Nav=({categories
                              }: NavProps) => {
     const [open, setOpen] = useState(false)
 
