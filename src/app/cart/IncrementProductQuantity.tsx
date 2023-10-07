@@ -11,7 +11,6 @@ type IncrementProductQuantityProps = {
 export const IncrementProductQuantity = ({
                                              quantity,
                                              itemId,
-                                             price,
                                          }: IncrementProductQuantityProps) => {
     const [optimisticQuantity, setOptimisticQuantity] = useOptimistic(quantity);
 
@@ -24,7 +23,7 @@ export const IncrementProductQuantity = ({
                 disabled={optimisticQuantity <= 1}
                 formAction={async () => {
                     setOptimisticQuantity(optimisticQuantity - 1);
-                    await changeItemQuantity(itemId, optimisticQuantity - 1, price);
+                    await changeItemQuantity(itemId, optimisticQuantity - 1);
                 }}
             >
                 <MinusIcon />
@@ -36,7 +35,7 @@ export const IncrementProductQuantity = ({
                 data-testid="increment"
                 formAction={async () => {
                     setOptimisticQuantity(optimisticQuantity + 1);
-                    await changeItemQuantity(itemId, optimisticQuantity + 1, price);
+                    await changeItemQuantity(itemId, optimisticQuantity + 1);
                 }}
             >
                 <PlusIcon />
