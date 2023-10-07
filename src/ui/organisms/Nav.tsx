@@ -10,7 +10,6 @@ import {
 } from '@heroicons/react/24/outline'
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
 import {SearchInput} from "@/ui/atoms/SearchInput";
-import NextImage from "next/image";
 
 type Category ={
     id: string;
