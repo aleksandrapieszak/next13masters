@@ -11,10 +11,6 @@ import {
 import {ActiveLink} from "@/ui/atoms/ActiveLink";
 import {SearchInput} from "@/ui/atoms/SearchInput";
 
-function classNames(...classes) {
-    return classes.filter(Boolean).join(' ')
-}
-
 type Category ={
     id: string;
     name: string;

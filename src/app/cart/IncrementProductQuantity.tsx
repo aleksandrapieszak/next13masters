@@ -6,7 +6,6 @@ import { changeItemQuantity } from "@/app/cart/actions";
 type IncrementProductQuantityProps = {
     quantity: number;
     itemId: string;
-    price: number;
 };
 export const IncrementProductQuantity = ({
                                              quantity,
