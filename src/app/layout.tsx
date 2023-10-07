@@ -4,7 +4,7 @@ import {Inter} from "next/font/google";
 import React from "react";
 import {getCategories} from "@/api/products";
 import {Nav} from "@/ui/organisms/Nav";
-// import {getCartByIdFromCookie} from "@/api/cart";
+import {getCartByIdFromCookie} from "@/api/cart";
 
 const inter = Inter({subsets: ["latin", "latin-ext"]});
 
@@ -19,14 +19,14 @@ export default async function RootLayout({
     children: React.ReactNode;
 }) {
     const categories = await getCategories();
-    // const cart = await getCartByIdFromCookie();
-    // const quantity = cart?.orderItems.length ?? 0;
+    const cart = await getCartByIdFromCookie();
+    const quantity = cart?.orderItems.length ?? 0;
 
     return (
         <html lang="pl">
         <body className={inter.className}>
-        <Nav categories={categories}/>
-        {/*<Nav categories={categories} quantity={quantity}/>*/}
+        {/*<Nav categories={categories}/>*/}
+        <Nav categories={categories} quantity={quantity}/>
         {/*<nav className="bg-gray-100">*/}
         {/*    <ul className="flex space-x-4 mx-auto p-5 max-w-7xl px-2 sm:px-6 lg:px-8 ">*/}
         {/*        <li>*/}
