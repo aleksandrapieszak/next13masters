@@ -1,7 +1,6 @@
-import {formatMoney} from "../../ui/utils";
-import {getCartByIdFromCookie} from "../../api/cart";
 import {redirect} from "next/navigation";
 import {IncrementProductQuantity} from "@/app/cart/IncrementProductQuantity";
+import {getCartByIdFromCookie} from "@/api/cart";
 
 export default async function Cart(){
     const cart = await getCartByIdFromCookie();
@@ -37,14 +36,14 @@ export default async function Cart(){
                                         price={item.product.price}
                                     />
                                 </td>
-                                <td>{item.product.price/100}</td>
+                                <td>{item.product.price}</td>
                             </tr>
                         ))}
                     </tbody>
                     <tfoot>
                     <tr>
                         <td colSpan="2" className="text-right font-bold">Total:</td>
-                        <td>{totalAmount/100}</td>
+                        <td>{totalAmount}</td>
                     </tr>
                     </tfoot>
                 </table>
