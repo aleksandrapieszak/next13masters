@@ -4,7 +4,7 @@ import {
     getCollectionsBySlug,
     getProductsCollectionByPage,
     getProductsListByCollectionSlug
-} from "@/api/products";
+} from "@/app/api/products";
 import {ProductList} from "@/ui/organisms/ProductList";
 import {Pagination} from "@/ui/molecules/Pagination";
 

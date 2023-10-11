@@ -2,9 +2,9 @@ import "./globals.css";
 import type {Metadata} from "next";
 import {Inter} from "next/font/google";
 import React from "react";
-import {getCategories} from "@/api/products";
+import {getCategories} from "@/app/api/products";
 import {Nav} from "@/ui/organisms/Nav";
-import {getCartByIdFromCookie} from "@/api/cart";
+import {getCartByIdFromCookie} from "@/app/api/cart";
 
 const inter = Inter({subsets: ["latin", "latin-ext"]});
 
@@ -17,6 +17,7 @@ export default async function RootLayout({
                                              children,
                                          }: {
     children: React.ReactNode;
+
 }) {
     const categories = await getCategories();
     const cart = await getCartByIdFromCookie();
@@ -55,6 +56,7 @@ export default async function RootLayout({
         {/*</nav>*/}
         <section className="sm:py-18 mx-auto flex w-full max-w-2xl flex-grow flex-col px-8 py-12 sm:px-6 lg:max-w-7xl">
             {children}
+
         </section>
         <footer className="bg-white">
             <div className="mx-auto max-w-7xl px-6 py-12 md:flex md:items-center md:justify-between lg:px-8">

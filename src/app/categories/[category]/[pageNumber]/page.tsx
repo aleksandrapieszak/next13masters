@@ -5,7 +5,7 @@ import {
     getCategoriesBySlug,
     getProductsByCategorySlug,
     getProductsCategoryByPage,
-} from "@/api/products";
+} from "@/app/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
 
 export const generateStaticParams = async ({params}:{params: {category:string, pageNumber: number}}) => {
@@ -24,7 +24,6 @@ export const generateMetadata = async ({params}:{params: {category:string}}): Pr
     const category = await getCategoriesBySlug(params.category);
 
     const generatedTitle = ` ${category?.name} `;
-    console.log("Generated title:", generatedTitle);
     return {
         title: generatedTitle
     };

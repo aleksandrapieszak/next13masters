@@ -4,7 +4,7 @@ type AddToCartProps = {
     product: SingleProductItemFragment;
 };
 
-import {addOrUpdateProductToCart, getOrCreateCart} from "@/api/cart";
+import {addOrUpdateProductToCart, getOrCreateCart} from "@/app/api/cart";
 
 export const AddToCardButton = ({ product }: AddToCartProps) => {
     async function addProductToCartAction() {

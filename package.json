@@ -37,6 +37,9 @@
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "server-only": "^0.0.1",
+    "stripe": "^13.9.0",
+    "stripe-cli": "^0.1.0",
+    "stripe-event-types": "^3.0.0",
     "typescript-eslint": "^0.0.1-alpha.0",
     "use-debounce": "^9.0.4",
     "uuid": "^9.0.1"

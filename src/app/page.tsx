@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
 import {SuggestedProductsList} from "@/ui/organisms/SuggestedProducts";
-import {getCollections, getProductsSuggestedList} from "@/api/products";
+import {getCollections, getProductsSuggestedList} from "@/app/api/products";
 import {CollectionSection} from "@/ui/organisms/CollectionSection";
 
 export default async function HomePage() {

@@ -12,21 +12,30 @@ import {
     ProductGetVariantsListDocument,
     ProductsGetByCategorySlugDocument,
     ProductsGetListByCollectionSlugDocument,
-    ProductsGetListDocument, ProductsGetSuggestedListDocument,
+    ProductsGetListDocument,
+    ProductsGetSuggestedListDocument,
     ProductListItemFragment,
     SingleProductColorVariantFragment,
     SingleProductSizeColorVariantFragment,
-    SingleProductSizeVariantFragment, ProductsGetListSearchDocument,
+    SingleProductSizeVariantFragment,
+    ProductsGetListSearchDocument,
+    ReviewItemFragment,
+    ReviewGetByProductIdDocument,
+    ReviewCreateDocument, ReviewPublishDocument, ProductUpdateAverageRatingDocument,
 
 } from "@/gql/graphql";
 
-import {executeGraphql} from "@/api/graphqlApi";
+import {executeGraphql} from "@/app/api/graphqlApi";
+import {revalidateTag} from "next/cache";
 
 export const getProductList = async () => {
 
     const graphqlResponse = await executeGraphql({
             query: ProductsGetListDocument,
-            variables: {}
+            variables: {},
+            next:{
+                revalidate: 15
+            }
         }
     )
 
@@ -209,3 +218,53 @@ export const getSearchProductsList = async (search: string) => {
 
     return graphqlResponse.products;
 };
+
+export const getProductReview = async (id: string) => {
+    const reviewsResponse = await executeGraphql({
+        query: ReviewGetByProductIdDocument,
+        variables: {
+            id,
+        },
+        next: { tags: ["review"] },
+    });
+
+    const review = reviewsResponse.reviewsConnection.edges.map((review) => review.node);
+
+    return review;
+};
+export const createReview = async (review: ReviewItemFragment) => {
+    const reviewId = await executeGraphql({
+        query: ReviewCreateDocument,
+        variables: {
+            ...review,
+        },
+    });
+
+    return reviewId;
+};
+
+export const publishReview = async (reviewID: string) => {
+    await executeGraphql({
+        query: ReviewPublishDocument,
+        variables: {
+            id: reviewID,
+        },
+        cache: "no-store",
+    });
+
+        revalidateTag("review");
+};
+
+export const updateAverage = async (id:string, averageRating:number)=>{
+    await executeGraphql({
+        query: ProductUpdateAverageRatingDocument,
+        variables:{
+            id:id,
+            averageRating:averageRating
+        },
+        cache: "no-store",
+
+    })
+    revalidateTag("review");
+
+}

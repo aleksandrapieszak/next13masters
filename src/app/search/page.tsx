@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
 import {ProductList} from "@/ui/organisms/ProductList";
-import {getSearchProductsList} from "@/api/products";
+import {getSearchProductsList} from "@/app/api/products";
 
 type SearchPageProps = {
     searchParams: { [key: string]: string };

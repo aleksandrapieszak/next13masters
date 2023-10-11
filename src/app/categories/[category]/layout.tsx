@@ -1,5 +1,5 @@
 import type {ReactNode} from "react";
-import {getCategories} from "@/api/products";
+import {getCategories} from "@/app/api/products";
 
 
 // export const generateStaticParams = async () => {

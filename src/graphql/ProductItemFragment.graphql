@@ -9,6 +9,9 @@ fragment SingleProductItem  on Product{
         url
     }
     price
+    averageRating
+
+
 }
 fragment SingleProductSizeColorVariant on ProductSizeColorVariant {
     id

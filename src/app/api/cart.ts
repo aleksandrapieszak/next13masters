@@ -4,7 +4,7 @@ import {
     CartCreateDocument,
     CartGetByIdDocument, CartUpsertProductDocument,
 } from "@/gql/graphql";
-import {executeGraphql} from "@/api/graphqlApi";
+import {executeGraphql} from "@/app/api/graphqlApi";
 
 export const getOrCreateCart = async () => {
     const cart = await getCartByIdFromCookie();
@@ -19,7 +19,7 @@ export const getOrCreateCart = async () => {
             "no-store",
     });
     if (!newCart) {
-        throw new Error("Failed to create cart");
+        throw new Error("Failed to create (.)cart");
     }
 
     cookies().set("cartId", newCart.id, {
@@ -108,5 +108,5 @@ export const addOrUpdateProductToCart = async (
 //         cache: "no-store",
 //     });
 //
-//     revalidateTag("cart");
+//     revalidateTag("(.)cart");
 // }

@@ -1,5 +1,5 @@
 import {ProductList} from "@/ui/organisms/ProductList";
-import {getProductList, getProductsByPage} from "@/api/products";
+import {getProductList, getProductsByPage} from "@/app/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
 
 export const generateStaticParams = async () => {

@@ -1,6 +1,6 @@
 import { type ProductListItemFragment } from "@/gql/graphql";
 import {SingleProductVariantsSelect} from "@/ui/atoms/SingleProductVariantsSelect";
-import {getProductVariants} from "@/api/products";
+import {getProductVariants} from "@/app/api/products";
 
 type SingleProductVariantsProps = {
     product: ProductListItemFragment;
