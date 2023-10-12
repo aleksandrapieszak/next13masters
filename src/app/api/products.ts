@@ -1,6 +1,6 @@
 import {notFound} from "next/navigation";
-// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import {revalidateTag} from "next/cache";
+// eslint-disable-next-line @typescript-eslint/consistent-type-imports
 import {
     CategoriesGetByCategorySlugDocument,
     CategoriesGetListDocument,
