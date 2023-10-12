@@ -15,12 +15,11 @@
 "use client"
 import {StarsItem} from "@/ui/atoms/StarsItem";
 import {StarItem} from "@/ui/atoms/StarItem";
-
-export const StarsItemListSumRating = ({
-                                  numberOfStars,
-                              }: {
+type StarsItemListSumRatingProps = {
     numberOfStars: number;
-}) => {
+};
+export const StarsItemListSumRating = ({ numberOfStars }: StarsItemListSumRatingProps) => {
+
     if (numberOfStars === 0){
         return <div>No ratings yet!</div>
     }

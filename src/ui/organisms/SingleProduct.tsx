@@ -25,7 +25,7 @@ export const SingleProduct = async ({ product }: SingleProductItemProps) => {
                                 Rating:
                                 {average}.00
                                 {average && (
-                                    <StarsItemListSumRating numberOfStars={average} selectedStars={average}/>
+                                    <StarsItemListSumRating numberOfStars={average}/>
                                     )}
 
                             </div>
