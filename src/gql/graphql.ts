@@ -5605,6 +5605,7 @@ export type Product = Node & {
   description: Scalars['String']['output'];
   /** Get the document in other stages */
   documentInStages: Array<Product>;
+  hash?: Maybe<Scalars['String']['output']>;
   /** List of Product versions */
   history: Array<Version>;
   /** The unique identifier */
@@ -6336,6 +6337,7 @@ export type ProductCreateInput = {
   createdAt?: InputMaybe<Scalars['DateTime']['input']>;
   /** description input for default locale (en) */
   description: Scalars['String']['input'];
+  hash?: InputMaybe<Scalars['String']['input']>;
   images?: InputMaybe<AssetCreateManyInlineInput>;
   /** Inline mutations for managing document localizations excluding the default locale */
   localizations?: InputMaybe<ProductCreateLocalizationsInput>;
@@ -6444,6 +6446,25 @@ export type ProductManyWhereInput = {
   documentInStages_every?: InputMaybe<ProductWhereStageInput>;
   documentInStages_none?: InputMaybe<ProductWhereStageInput>;
   documentInStages_some?: InputMaybe<ProductWhereStageInput>;
+  hash?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  hash_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  hash_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  hash_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  hash_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  hash_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  hash_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  hash_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  hash_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  hash_starts_with?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['ID']['input']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']['input']>;
@@ -6520,6 +6541,8 @@ export enum ProductOrderByInput {
   CreatedAtDesc = 'createdAt_DESC',
   DescriptionAsc = 'description_ASC',
   DescriptionDesc = 'description_DESC',
+  HashAsc = 'hash_ASC',
+  HashDesc = 'hash_DESC',
   IdAsc = 'id_ASC',
   IdDesc = 'id_DESC',
   NameAsc = 'name_ASC',
@@ -7632,6 +7655,7 @@ export type ProductUpdateInput = {
   collections?: InputMaybe<CollectionUpdateManyInlineInput>;
   /** description input for default locale (en) */
   description?: InputMaybe<Scalars['String']['input']>;
+  hash?: InputMaybe<Scalars['String']['input']>;
   images?: InputMaybe<AssetUpdateManyInlineInput>;
   /** Manage document localizations */
   localizations?: InputMaybe<ProductUpdateLocalizationsInput>;
@@ -7689,6 +7713,7 @@ export type ProductUpdateManyInput = {
   averageRating?: InputMaybe<Scalars['Int']['input']>;
   /** description input for default locale (en) */
   description?: InputMaybe<Scalars['String']['input']>;
+  hash?: InputMaybe<Scalars['String']['input']>;
   /** Optional updates to localizations */
   localizations?: InputMaybe<ProductUpdateManyLocalizationsInput>;
   /** price input for default locale (en) */
@@ -7930,6 +7955,25 @@ export type ProductWhereInput = {
   documentInStages_every?: InputMaybe<ProductWhereStageInput>;
   documentInStages_none?: InputMaybe<ProductWhereStageInput>;
   documentInStages_some?: InputMaybe<ProductWhereStageInput>;
+  hash?: InputMaybe<Scalars['String']['input']>;
+  /** All values containing the given string. */
+  hash_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values ending with the given string. */
+  hash_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are contained in given list. */
+  hash_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** Any other value that exists and is not equal to the given value. */
+  hash_not?: InputMaybe<Scalars['String']['input']>;
+  /** All values not containing the given string. */
+  hash_not_contains?: InputMaybe<Scalars['String']['input']>;
+  /** All values not ending with the given string */
+  hash_not_ends_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values that are not contained in given list. */
+  hash_not_in?: InputMaybe<Array<InputMaybe<Scalars['String']['input']>>>;
+  /** All values not starting with the given string. */
+  hash_not_starts_with?: InputMaybe<Scalars['String']['input']>;
+  /** All values starting with the given string. */
+  hash_starts_with?: InputMaybe<Scalars['String']['input']>;
   id?: InputMaybe<Scalars['ID']['input']>;
   /** All values containing the given string. */
   id_contains?: InputMaybe<Scalars['ID']['input']>;
@@ -10988,10 +11032,11 @@ export type ProductListItemFragment = { __typename?: 'Product', id: string, name
 export type ProductUpdateAverageRatingMutationVariables = Exact<{
   averageRating: Scalars['Int']['input'];
   id: Scalars['ID']['input'];
+  hash: Scalars['String']['input'];
 }>;
 
 
-export type ProductUpdateAverageRatingMutation = { __typename?: 'Mutation', updateProduct?: { __typename?: 'Product', id: string, averageRating?: number | null } | null, publishProduct?: { __typename?: 'Product', id: string } | null };
+export type ProductUpdateAverageRatingMutation = { __typename?: 'Mutation', updateProduct?: { __typename?: 'Product', id: string, averageRating?: number | null, hash?: string | null } | null, publishProduct?: { __typename?: 'Product', id: string } | null };
 
 export type GetProductsCategoryByPageQueryVariables = Exact<{
   slug: Scalars['String']['input'];
@@ -11030,6 +11075,13 @@ export type ProductsGetListByCollectionSlugQueryVariables = Exact<{
 
 export type ProductsGetListByCollectionSlugQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, price: number, description: string, averageRating?: number | null, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
 
+export type ProductsGetListOrderByQueryVariables = Exact<{
+  orderBy?: InputMaybe<ProductOrderByInput>;
+}>;
+
+
+export type ProductsGetListOrderByQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, price: number, description: string, averageRating?: number | null, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
+
 export type GetProductsByPageQueryVariables = Exact<{
   skip: Scalars['Int']['input'];
   first: Scalars['Int']['input'];
@@ -11037,6 +11089,15 @@ export type GetProductsByPageQueryVariables = Exact<{
 
 
 export type GetProductsByPageQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, price: number, description: string, averageRating?: number | null, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
+
+export type GetProductsByPageOrderByQueryVariables = Exact<{
+  skip: Scalars['Int']['input'];
+  first: Scalars['Int']['input'];
+  orderBy?: InputMaybe<ProductOrderByInput>;
+}>;
+
+
+export type GetProductsByPageOrderByQuery = { __typename?: 'Query', products: Array<{ __typename?: 'Product', id: string, name: string, price: number, description: string, averageRating?: number | null, categories: Array<{ __typename?: 'Category', name: string }>, images: Array<{ __typename?: 'Asset', url: string }> }> };
 
 export type ProductsGetListSearchQueryVariables = Exact<{
   search: Scalars['String']['input'];
@@ -11343,10 +11404,14 @@ fragment SingleProductSizeVariant on ProductSizeVariant {
   name
 }`) as unknown as TypedDocumentString<ProductGetVariantsListQuery, ProductGetVariantsListQueryVariables>;
 export const ProductUpdateAverageRatingDocument = new TypedDocumentString(`
-    mutation ProductUpdateAverageRating($averageRating: Int!, $id: ID!) {
-  updateProduct(data: {averageRating: $averageRating}, where: {id: $id}) {
+    mutation ProductUpdateAverageRating($averageRating: Int!, $id: ID!, $hash: String!) {
+  updateProduct(
+    data: {averageRating: $averageRating, hash: $hash}
+    where: {id: $id}
+  ) {
     id
     averageRating
+    hash
   }
   publishProduct(to: PUBLISHED, where: {id: $id}) {
     id
@@ -11466,6 +11531,25 @@ export const ProductsGetListByCollectionSlugDocument = new TypedDocumentString(`
   }
   averageRating
 }`) as unknown as TypedDocumentString<ProductsGetListByCollectionSlugQuery, ProductsGetListByCollectionSlugQueryVariables>;
+export const ProductsGetListOrderByDocument = new TypedDocumentString(`
+    query ProductsGetListOrderBy($orderBy: ProductOrderByInput) {
+  products(orderBy: $orderBy) {
+    ...ProductListItem
+  }
+}
+    fragment ProductListItem on Product {
+  id
+  name
+  price
+  description
+  categories(first: 1) {
+    name
+  }
+  images(first: 1) {
+    url
+  }
+  averageRating
+}`) as unknown as TypedDocumentString<ProductsGetListOrderByQuery, ProductsGetListOrderByQueryVariables>;
 export const GetProductsByPageDocument = new TypedDocumentString(`
     query GetProductsByPage($skip: Int!, $first: Int!) {
   products(skip: $skip, first: $first) {
@@ -11485,6 +11569,25 @@ export const GetProductsByPageDocument = new TypedDocumentString(`
   }
   averageRating
 }`) as unknown as TypedDocumentString<GetProductsByPageQuery, GetProductsByPageQueryVariables>;
+export const GetProductsByPageOrderByDocument = new TypedDocumentString(`
+    query GetProductsByPageOrderBy($skip: Int!, $first: Int!, $orderBy: ProductOrderByInput) {
+  products(skip: $skip, first: $first, orderBy: $orderBy) {
+    ...ProductListItem
+  }
+}
+    fragment ProductListItem on Product {
+  id
+  name
+  price
+  description
+  categories(first: 1) {
+    name
+  }
+  images(first: 1) {
+    url
+  }
+  averageRating
+}`) as unknown as TypedDocumentString<GetProductsByPageOrderByQuery, GetProductsByPageOrderByQueryVariables>;
 export const ProductsGetListSearchDocument = new TypedDocumentString(`
     query ProductsGetListSearch($search: String!) {
   products(where: {_search: $search}) {

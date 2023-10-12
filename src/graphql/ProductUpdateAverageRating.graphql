@@ -1,7 +1,9 @@
-mutation ProductUpdateAverageRating($averageRating: Int!, $id: ID!) {
-    updateProduct(data: {averageRating: $averageRating}, where: {id: $id}) {
+mutation ProductUpdateAverageRating($averageRating: Int!, $id: ID!, $hash: String!) {
+    updateProduct(data: {averageRating: $averageRating, hash: $hash}, where: {id: $id}) {
         id
         averageRating
+        hash
+
     }
     publishProduct(to: PUBLISHED, where:{id: $id}) {
         id

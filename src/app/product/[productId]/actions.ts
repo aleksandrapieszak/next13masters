@@ -1,6 +1,9 @@
 "use server";
-import { type ReviewItemFragment } from "@/gql/graphql";
-import {createReview, getProductReview, publishReview, updateAverage} from "@/app/api/products";
+import {revalidateTag} from "next/cache";
+import {ProductUpdateAverageRatingDocument, type ReviewItemFragment} from "@/gql/graphql";
+import {createReview, getProductReview, publishReview} from "@/app/api/products";
+import {executeGraphql} from "@/app/api/graphqlApi";
+
 
 export const addReview = async (productId: string, formData: FormData) => {
     const reviewForm: ReviewItemFragment = {
@@ -26,7 +29,20 @@ export const addReview = async (productId: string, formData: FormData) => {
         throw TypeError("Something went wrong during the review creation!");
     }
 
-    await updateAverage(productId, newAverageRating)
+    const updateAverage = async (id:string, averageRating:number)=>{
+        await executeGraphql({
+            query: ProductUpdateAverageRatingDocument,
+            variables:{
+                id:id,
+                averageRating:averageRating,
+                hash: `${crypto.randomUUID()}-${crypto.randomUUID()}`,
+            },
+            cache: "no-store",
+
+        })
+        revalidateTag("review");
+    }
+    await updateAverage(productId,newAverageRating)
     await publishReview(reviewId.id);
 
 };

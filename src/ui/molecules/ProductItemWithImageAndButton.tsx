@@ -17,7 +17,6 @@ export const ProductItemWithImageAndButton = ({product}:
                         (<ProductCoverImage src={product.images[0].url} alt={""}/>)}
                     <ProductItem product={product}/>
                 </Link>
-                {/*<AddToCardButton title={'Add to card'}/>*/}
             </div>
         </li>
 

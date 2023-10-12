@@ -28,7 +28,7 @@ export const AddToCardButton = ({ product }: AddToCartProps) => {
         <form action={addProductToCartAction}>
             <button
                 type="submit"
-                className="disable:cursor-wait mt-4 justify-center px-5 pb-5 text-center">
+                className="disable:cursor-wait mt-4 justify-center pb-5 text-center">
                 <div
                     className="mt-3 flex items-center justify-center rounded-md bg-gray-300 px-5 py-2.5 text-center text-sm font-medium text-black hover:bg-gray-500 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">
                     <svg xmlns="http://www.w3.org/2000/svg" className="mr-2 h-6 w-6" fill="none"

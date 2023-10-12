@@ -1,0 +1,5 @@
+query ProductsGetListOrderBy($orderBy: ProductOrderByInput) {
+    products(orderBy: $orderBy) {
+        ...ProductListItem
+    }
+}

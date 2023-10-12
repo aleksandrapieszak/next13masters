@@ -173,17 +173,6 @@ export const Nav=({categories,quantity
                                             <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true"/>
                                     </div>
 
-                                    {/* Logo (lg-) */}
-                                    <a href="#" className="lg:hidden">
-                                        <span className="sr-only">Your Company</span>
-                                        {/*<NextImage*/}
-                                        {/*    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"*/}
-                                        {/*    alt=""*/}
-                                        {/*    height={}*/}
-                                        {/*    className="h-8 w-auto"*/}
-                                        {/*/>*/}
-                                    </a>
-
                                     <div className="flex flex-1 items-center justify-end">
                                         <div className="flex items-center lg:ml-8">
                                             {/* Cart */}

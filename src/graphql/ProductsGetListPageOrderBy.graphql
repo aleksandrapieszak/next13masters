@@ -1,0 +1,5 @@
+query GetProductsByPageOrderBy($skip: Int!, $first: Int!, $orderBy: ProductOrderByInput) {
+    products(skip: $skip, first: $first, orderBy: $orderBy) {
+        ...ProductListItem
+    }
+}

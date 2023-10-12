@@ -1,4 +1,3 @@
-import {redirect} from "next/navigation";
 import Stripe from "stripe";
 
 export default async function CartSuccessPage({searchParams}: {searchParams:{session_id:string}}){

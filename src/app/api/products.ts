@@ -21,7 +21,11 @@ import {
     ProductsGetListSearchDocument,
     ReviewItemFragment,
     ReviewGetByProductIdDocument,
-    ReviewCreateDocument, ReviewPublishDocument, ProductUpdateAverageRatingDocument,
+    ReviewCreateDocument,
+    ReviewPublishDocument,
+    ProductUpdateAverageRatingDocument,
+    ProductOrderByInput,
+    GetProductsByPageOrderByDocument, ProductsGetListOrderByDocument,
 
 } from "@/gql/graphql";
 
@@ -43,13 +47,45 @@ export const getProductList = async () => {
 
 
 }
+export const getProductListOrderBy = async (orderBy: ProductOrderByInput | undefined) => {
 
-export const getProductsByPage = async (page: number) => {
+    const graphqlResponse = await executeGraphql({
+            query: ProductsGetListOrderByDocument,
+            variables: {orderBy},
+            next:{
+                revalidate: 15
+            }
+        }
+    )
+
+    return graphqlResponse.products;
+
+
+}
+
+export const getProductsByPage = async (page: number
+) => {
     const productsPerPage = 6;
     const skip = (page - 1) * productsPerPage;
     const graphqlResponse = await executeGraphql({
             query: GetProductsByPageDocument,
-            variables: {skip, first: productsPerPage}
+            variables: {skip, first: productsPerPage},
+
+        }
+    )
+
+    return graphqlResponse.products;
+
+};
+
+export const getProductsByPageSortBy = async (page: number, orderBy: ProductOrderByInput | undefined,
+) => {
+    const productsPerPage = 6;
+    const skip = (page - 1) * productsPerPage;
+    const graphqlResponse = await executeGraphql({
+            query: GetProductsByPageOrderByDocument,
+            variables: {skip, first: productsPerPage, orderBy},
+
         }
     )
 

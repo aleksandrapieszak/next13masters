@@ -2,8 +2,6 @@ import {redirect} from "next/navigation";
 import {IncrementProductQuantity} from "@/ui/atoms/IncrementProductQuantity";
 import {getCartByIdFromCookie} from "@/app/api/cart";
 import RemoveButton from "@/ui/atoms/buttons/RemoveButton";
-import Stripe from "stripe";
-import {cookies} from "next/headers";
 import {handlePaymentAction} from "@/app/cart/actions";
 
 export default async function Cart() {

@@ -13,7 +13,7 @@ export const StarsItem = ({ isSelected = false, onClick }: { isSelected?: boolea
     return (
         <svg
             aria-hidden="true"
-            className={`h-3 w-3 ${isSelected ? 'text-yellow-300' : 'text-gray-300'} cursor-pointer`}
+            className={`h-5 w-5 ${isSelected ? 'text-yellow-300' : 'text-gray-300'} cursor-pointer`}
             fill="currentColor"
             viewBox="0 0 20 20"
             xmlns="http://www.w3.org/2000/svg"

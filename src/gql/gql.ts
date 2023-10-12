@@ -30,13 +30,15 @@ const documents = {
     "query ProductGetVariantsList($id: ID!) {\n  product(where: {id: $id}) {\n    variants {\n      ... on ProductColorVariant {\n        ...SingleProductColorVariant\n      }\n      ... on ProductSizeColorVariant {\n        ...SingleProductSizeColorVariant\n      }\n      ... on ProductSizeVariant {\n        ...SingleProductSizeVariant\n      }\n    }\n  }\n}": types.ProductGetVariantsListDocument,
     "fragment SingleProductItem on Product {\n  id\n  name\n  description\n  categories(first: 1) {\n    name\n  }\n  images(first: 1) {\n    url\n  }\n  price\n  averageRating\n}\n\nfragment SingleProductSizeColorVariant on ProductSizeColorVariant {\n  id\n  name\n}\n\nfragment SingleProductColorVariant on ProductColorVariant {\n  id\n  name\n}\n\nfragment SingleProductSizeVariant on ProductSizeVariant {\n  id\n  name\n}": types.SingleProductItemFragmentDoc,
     "fragment ProductListItem on Product {\n  id\n  name\n  price\n  description\n  categories(first: 1) {\n    name\n  }\n  images(first: 1) {\n    url\n  }\n  averageRating\n}": types.ProductListItemFragmentDoc,
-    "mutation ProductUpdateAverageRating($averageRating: Int!, $id: ID!) {\n  updateProduct(data: {averageRating: $averageRating}, where: {id: $id}) {\n    id\n    averageRating\n  }\n  publishProduct(to: PUBLISHED, where: {id: $id}) {\n    id\n  }\n}": types.ProductUpdateAverageRatingDocument,
+    "mutation ProductUpdateAverageRating($averageRating: Int!, $id: ID!, $hash: String!) {\n  updateProduct(\n    data: {averageRating: $averageRating, hash: $hash}\n    where: {id: $id}\n  ) {\n    id\n    averageRating\n    hash\n  }\n  publishProduct(to: PUBLISHED, where: {id: $id}) {\n    id\n  }\n}": types.ProductUpdateAverageRatingDocument,
     "query GetProductsCategoryByPage($slug: String!, $skip: Int!, $first: Int!) {\n  productsConnection(\n    where: {categories_some: {slug: $slug}}\n    skip: $skip\n    first: $first\n  ) {\n    edges {\n      node {\n        ...ProductListItem\n      }\n    }\n  }\n}": types.GetProductsCategoryByPageDocument,
     "query GetProductsCollectionByPage($slug: String!, $skip: Int!, $first: Int!) {\n  productsConnection(\n    where: {collections_some: {slug: $slug}}\n    skip: $skip\n    first: $first\n  ) {\n    edges {\n      node {\n        ...ProductListItem\n      }\n    }\n  }\n}": types.GetProductsCollectionByPageDocument,
     "query ProductsGetByCategorySlug($slug: String!) {\n  categories(where: {slug: $slug}) {\n    products {\n      ...ProductListItem\n    }\n  }\n}": types.ProductsGetByCategorySlugDocument,
     "query ProductsGetList {\n  products {\n    ...ProductListItem\n  }\n}": types.ProductsGetListDocument,
     "query ProductsGetListByCollectionSlug($slag: String!) {\n  products(where: {collections_some: {slug: $slag}}) {\n    ...ProductListItem\n  }\n}": types.ProductsGetListByCollectionSlugDocument,
+    "query ProductsGetListOrderBy($orderBy: ProductOrderByInput) {\n  products(orderBy: $orderBy) {\n    ...ProductListItem\n  }\n}": types.ProductsGetListOrderByDocument,
     "query GetProductsByPage($skip: Int!, $first: Int!) {\n  products(skip: $skip, first: $first) {\n    ...ProductListItem\n  }\n}": types.GetProductsByPageDocument,
+    "query GetProductsByPageOrderBy($skip: Int!, $first: Int!, $orderBy: ProductOrderByInput) {\n  products(skip: $skip, first: $first, orderBy: $orderBy) {\n    ...ProductListItem\n  }\n}": types.GetProductsByPageOrderByDocument,
     "query ProductsGetListSearch($search: String!) {\n  products(where: {_search: $search}) {\n    ...ProductListItem\n  }\n}": types.ProductsGetListSearchDocument,
     "query ProductsGetSuggestedList($name: String!) {\n  products(where: {categories_some: {name: $name}}, first: 4) {\n    ...ProductListItem\n  }\n}": types.ProductsGetSuggestedListDocument,
     "mutation ReviewCreate($id: ID!, $headline: String!, $name: String!, $email: String!, $content: String!, $rating: Int!) {\n  createReview(\n    data: {headline: $headline, name: $name, email: $email, content: $content, rating: $rating, product: {connect: {id: $id}}}\n  ) {\n    id\n  }\n}": types.ReviewCreateDocument,
@@ -112,7 +114,7 @@ export function graphql(source: "fragment ProductListItem on Product {\n  id\n  
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
-export function graphql(source: "mutation ProductUpdateAverageRating($averageRating: Int!, $id: ID!) {\n  updateProduct(data: {averageRating: $averageRating}, where: {id: $id}) {\n    id\n    averageRating\n  }\n  publishProduct(to: PUBLISHED, where: {id: $id}) {\n    id\n  }\n}"): typeof import('./graphql').ProductUpdateAverageRatingDocument;
+export function graphql(source: "mutation ProductUpdateAverageRating($averageRating: Int!, $id: ID!, $hash: String!) {\n  updateProduct(\n    data: {averageRating: $averageRating, hash: $hash}\n    where: {id: $id}\n  ) {\n    id\n    averageRating\n    hash\n  }\n  publishProduct(to: PUBLISHED, where: {id: $id}) {\n    id\n  }\n}"): typeof import('./graphql').ProductUpdateAverageRatingDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
@@ -136,7 +138,15 @@ export function graphql(source: "query ProductsGetListByCollectionSlug($slag: St
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
+export function graphql(source: "query ProductsGetListOrderBy($orderBy: ProductOrderByInput) {\n  products(orderBy: $orderBy) {\n    ...ProductListItem\n  }\n}"): typeof import('./graphql').ProductsGetListOrderByDocument;
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
 export function graphql(source: "query GetProductsByPage($skip: Int!, $first: Int!) {\n  products(skip: $skip, first: $first) {\n    ...ProductListItem\n  }\n}"): typeof import('./graphql').GetProductsByPageDocument;
+/**
+ * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
+ */
+export function graphql(source: "query GetProductsByPageOrderBy($skip: Int!, $first: Int!, $orderBy: ProductOrderByInput) {\n  products(skip: $skip, first: $first, orderBy: $orderBy) {\n    ...ProductListItem\n  }\n}"): typeof import('./graphql').GetProductsByPageOrderByDocument;
 /**
  * The graphql function is used to parse GraphQL queries into a document that can be used by GraphQL clients.
  */
