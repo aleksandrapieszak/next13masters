@@ -27,7 +27,7 @@ export async function POST(req: NextRequest): Promise<Response>{
         const event = stripe.webhooks.constructEvent(
             await req.text(),
             signature,
-            process.env.STRIPE_WEBHOOK_SECRET
+            webhookSecret
         ) as Stripe.DiscriminatedEvent;
         console.log(event);
     } catch (err) {
