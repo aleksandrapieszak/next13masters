@@ -42,7 +42,7 @@ export default async function CollectionPage({ params }: CollectionPageProps) {
         <section className="flex min-h-screen flex-col items-center p-12" data-testid="collections">
             <h2> { collection?.name } </h2>
             <ProductList products={productsByPage} />
-            <Pagination totalPages={totalPages} url={`/collections/${params.collectionName}`}/>
+            <Pagination totalPages={totalPages} url={`/collections/${params.collectionName}`} sortValue={""}/>
         </section>
     );
 }
