@@ -1,6 +1,6 @@
 import React, {Suspense} from "react";
 import {notFound} from "next/navigation";
-import {Metadata} from "next";
+import {type Metadata} from "next";
 import {getProductById, getProductList, getProductReview, getProductsSuggestedList} from "@/app/api/products";
 import {SingleProduct} from "@/ui/organisms/SingleProduct";
 import {SingleProductReviewForm} from "@/ui/organisms/SingleProductReviewForm";

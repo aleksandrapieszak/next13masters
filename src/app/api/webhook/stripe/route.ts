@@ -1,5 +1,5 @@
 /// <reference types="stripe-event-types" />
-import {NextRequest} from "next/server";
+import {type NextRequest} from "next/server";
 import Stripe from "stripe";
 
 export async function POST(req: NextRequest): Promise<Response>{

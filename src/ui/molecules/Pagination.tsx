@@ -1,5 +1,5 @@
+import {type Route} from "next";
 import { ActiveLink } from "@/ui/atoms/ActiveLink";
-import {Route} from "next";
 
 type PaginationProps = {
     totalPages: number;

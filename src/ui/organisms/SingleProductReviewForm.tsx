@@ -1,6 +1,6 @@
 "use client";
 import React, { experimental_useOptimistic as useOptimistic, useRef } from "react";
-import {ReviewItemFragment} from "@/gql/graphql";
+import {type ReviewItemFragment} from "@/gql/graphql";
 import {addReview} from "@/app/product/[productId]/actions";
 import {SingleProductReviewInput} from "@/ui/atoms/SingleProductReviewInput";
 import {SingleProductReviewRatingInput} from "@/ui/molecules/SingleProductReviewRatingInput";

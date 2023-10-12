@@ -1,7 +1,7 @@
 import {ProductList} from "@/ui/organisms/ProductList";
 import {getProductList, getProductListOrderBy, getProductsByPageSortBy} from "@/app/api/products";
 import {Pagination} from "@/ui/molecules/Pagination";
-import {ProductOrderByInput} from "@/gql/graphql";
+import {type ProductOrderByInput} from "@/gql/graphql";
 import {SortSelect} from "@/ui/atoms/SortSelect";
 
 type ProductsPageProps = {

@@ -1,9 +1,9 @@
 "use client"
+import {useRouter} from "next/navigation";
 import {removeITem} from "@/app/cart/actions";
 import {useTransition} from "react";
-import {useRouter} from "next/navigation";
 
-export default function RemoveButton({itemId}:{itemId:string}) {
+export function RemoveButton({itemId}:{itemId:string}) {
     const [isPending, startTransition] = useTransition()
     const router =useRouter();
     return (

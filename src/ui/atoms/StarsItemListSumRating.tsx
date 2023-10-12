@@ -13,7 +13,6 @@
 // };
 
 "use client"
-import {StarsItem} from "@/ui/atoms/StarsItem";
 import {StarItem} from "@/ui/atoms/StarItem";
 type StarsItemListSumRatingProps = {
     numberOfStars: number;
@@ -26,10 +25,8 @@ export const StarsItemListSumRating = ({ numberOfStars }: StarsItemListSumRating
     return (
         <div className="mb-3 mt-2 flex justify-center">
             {Array.from({ length: numberOfStars }).map((_, index) => (
-                <StarItem
-                />
-
-                ))}
+                <StarItem key={index} />
+            ))}
         </div>
     );
 };

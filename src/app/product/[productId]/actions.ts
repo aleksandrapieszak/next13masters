@@ -21,7 +21,7 @@ export const addReview = async (productId: string, formData: FormData) => {
     const reviewsByProduct = await getProductReview(productId);
 
     // Oblicz nową średnią ocenę.
-    let totalRating = reviewsByProduct.reduce((total, review) => total + review.rating, 0) + reviewForm.rating;
+    const totalRating = reviewsByProduct.reduce((total, review) => total + review.rating, 0) + reviewForm.rating;
     const numberOfReviews = reviewsByProduct.length + 1; // +1 ponieważ dodaliśmy nową recenzję.
     const newAverageRating = Math.round(totalRating / numberOfReviews);
 

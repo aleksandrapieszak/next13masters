@@ -1,5 +1,6 @@
 import {notFound} from "next/navigation";
 // eslint-disable-next-line @typescript-eslint/consistent-type-imports
+import {revalidateTag} from "next/cache";
 import {
     CategoriesGetByCategorySlugDocument,
     CategoriesGetListDocument,
@@ -23,14 +24,12 @@ import {
     ReviewGetByProductIdDocument,
     ReviewCreateDocument,
     ReviewPublishDocument,
-    ProductUpdateAverageRatingDocument,
     ProductOrderByInput,
     GetProductsByPageOrderByDocument, ProductsGetListOrderByDocument,
 
 } from "@/gql/graphql";
 
 import {executeGraphql} from "@/app/api/graphqlApi";
-import {revalidateTag} from "next/cache";
 
 export const getProductList = async () => {
 
