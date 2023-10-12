@@ -27,6 +27,8 @@ export const AddToCardButton = ({ product }: AddToCartProps) => {
     return (
         <form action={addProductToCartAction}>
             <button
+                id="add-to-cart-button"
+                name="add-to-cart-button"
                 type="submit"
                 className="disable:cursor-wait mt-4 justify-center pb-5 text-center">
                 <div
