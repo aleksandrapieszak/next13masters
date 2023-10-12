@@ -74,7 +74,7 @@ export const ActiveLink = ({
         : currentPathname.startsWith(url.pathname);
 
     return (
-        <Link href={href} className={clsx(className, isActive && activeClassName)}>
+        <Link href={href} className={clsx(className, isActive && activeClassName)} aria-current={isActive ? "page" : undefined}>
                 {children}
         </Link>
     );
