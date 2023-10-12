@@ -3,9 +3,10 @@ import React, { experimental_useOptimistic as useOptimistic, useRef } from "reac
 import {type ReviewItemFragment} from "@/gql/graphql";
 import {addReview} from "@/app/product/[productId]/actions";
 import {SingleProductReviewInput} from "@/ui/atoms/SingleProductReviewInput";
-import {SingleProductReviewRatingInput} from "@/ui/molecules/SingleProductReviewRatingInput";
+// import {SingleProductReviewRatingInput} from "@/ui/molecules/SingleProductReviewRatingInput";
 import {SubmitButton} from "@/ui/atoms/buttons/SubmitButton";
 import {Review} from "@/ui/atoms/Review";
+import {RatingSelect} from "@/ui/atoms/RatingSelect";
 
 
 type SingleProductReviewFormProps = {
@@ -54,7 +55,8 @@ export const SingleProductReviewForm = ({ productId, reviews }: SingleProductRev
                         rows={3}
                         required
                     />
-                    <SingleProductReviewRatingInput />
+                        <RatingSelect/>
+                    {/*<SingleProductReviewRatingInput />*/}
                     <SingleProductReviewInput label={"Name"} type={"text"} name={"name"} />
                     <SingleProductReviewInput label={"Email"} type={"email"} name={"email"} />
                     <SubmitButton label={"ADD REVIEW"} />
