@@ -114,7 +114,6 @@ export const Nav=({categories,quantity
                 </Dialog>
             </Transition.Root>
             <header className="relative">
-                <nav aria-label="Top">
                     {/* Secondary navigation */}
                     <div className="bg-white">
                         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
@@ -193,7 +192,6 @@ export const Nav=({categories,quantity
                             </div>
                         </div>
                     </div>
-                </nav>
             </header>
         </nav>
     )
