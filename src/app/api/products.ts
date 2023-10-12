@@ -291,16 +291,16 @@ export const publishReview = async (reviewID: string) => {
         revalidateTag("review");
 };
 
-export const updateAverage = async (id:string, averageRating:number)=>{
-    await executeGraphql({
-        query: ProductUpdateAverageRatingDocument,
-        variables:{
-            id:id,
-            averageRating:averageRating
-        },
-        cache: "no-store",
-
-    })
-    revalidateTag("review");
-
-}
+// export const updateAverage = async (id:string, averageRating:number)=>{
+//     await executeGraphql({
+//         query: ProductUpdateAverageRatingDocument,
+//         variables:{
+//             id:id,
+//             averageRating:averageRating
+//         },
+//         cache: "no-store",
+//
+//     })
+//     revalidateTag("review");
+//
+// }
