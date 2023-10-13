@@ -70,7 +70,6 @@ import {getCartByIdFromCookie} from "@/app/api/cart";
 import {IncrementProductQuantity} from "@/ui/atoms/IncrementProductQuantity";
 import {handlePaymentAction} from "@/app/cart/actions";
 import {RemoveButton} from "@/ui/atoms/buttons/RemoveButton";
-import NextImage from "next/image";
 import {ProductCoverImage} from "@/ui/atoms/ProductCoverImage";
 
 export default async function Cart() {
