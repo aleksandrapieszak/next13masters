@@ -33,7 +33,7 @@ export const SortSelect = () => {
                 <p className="block text-sm font-medium leading-6 text-gray-900">Sort by: </p>
 
                 <select
-                    data-testid={currentTestId}
+                    data-testid="sort-select"
                     className="relative w-full cursor-default rounded-md bg-white py-1.5 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     name="sort_by"
                     id="sort_by_id"
@@ -45,11 +45,11 @@ export const SortSelect = () => {
                         router.push(`${pathname}?${currentSearchParams.toString()}` as Route);
                     }}
                 >
-                    <option                     data-testid={currentTestId}
-                                                disabled>sort by:</option>
+                    {/*<option                     data-testid={currentTestId}*/}
+                    {/*                            disabled>sort by:</option>*/}
                     {ORDER_LIST.map(({ label, value }) => (
                         <option
-                            data-testid={currentTestId}
+                            data-testid={value.includes("price") ? "sort-by-price" : "sort-by-rating"}
                             key={value} value={value}>
                             {label}
                         </option>
