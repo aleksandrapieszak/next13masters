@@ -30,6 +30,8 @@ export const AddToCardButton = ({ product }: AddToCartProps) => {
                 id="add-to-cart-button"
                 name="add-to-cart-button"
                 type="submit"
+                data-testid="add-to-cart-button"
+
                 className="disable:cursor-wait mt-4 justify-center pb-5 text-center">
                 <div
                     className="mt-3 flex items-center justify-center rounded-md bg-gray-300 px-5 py-2.5 text-center text-sm font-medium text-black hover:bg-gray-500 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300">
