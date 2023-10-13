@@ -45,9 +45,12 @@ export const SortSelect = () => {
                         router.push(`${pathname}?${currentSearchParams.toString()}` as Route);
                     }}
                 >
-                    <option disabled>sort by:</option>
+                    <option                     data-testid={currentTestId}
+                                                disabled>sort by:</option>
                     {ORDER_LIST.map(({ label, value }) => (
-                        <option key={value} value={value}>
+                        <option
+                            data-testid={currentTestId}
+                            key={value} value={value}>
                             {label}
                         </option>
                     ))}
