@@ -112,7 +112,9 @@ export default async function Cart() {
                                         <h4 className="text-sm">
                                             {item.product?.name}
                                         </h4>
-                                        <p className="ml-4 text-sm font-medium text-gray-900">{item.product?.price*item.quantity/100} zł</p>
+                                        { item.product?.price && (
+                                            <p className="ml-4 text-sm font-medium text-gray-900">{item.product?.price*item.quantity/100} zł</p>
+                                        )}
                                     </div>
                                 </div>
 
