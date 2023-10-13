@@ -19,15 +19,25 @@ export const SortSelect = () => {
     const pathname = usePathname();
     const searchParams = useSearchParams();
 
+    const currentSort = searchParams.get("sort");
+    let currentTestId = "";
+    if (currentSort && currentSort.includes("price")) {
+        currentTestId = "sort-by-price";
+    } else if (currentSort && currentSort.includes("rating")) {
+        currentTestId = "sort-by-rating";
+    }
+
     return (
-        <div className="lg:w-1/4 w-full"> {/* <-- Dodane klasy tutaj */}
+        <div className="lg:w-1/4 w-full">
             <div className="block text-sm font-medium leading-6 text-gray-900">
                 <p className="block text-sm font-medium leading-6 text-gray-900">Sort by: </p>
+
                 <select
+                    data-testid={currentTestId}
                     className="relative w-full cursor-default rounded-md bg-white py-1.5 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
                     name="sort_by"
                     id="sort_by_id"
-                    value={searchParams.get("sort") || "Sort by"}
+                    value={currentSort || "Sort by"}
                     onChange={(event) => {
                         const currentSortValue = event.target.value;
                         const currentSearchParams = new URLSearchParams(searchParams.toString());
@@ -37,7 +47,7 @@ export const SortSelect = () => {
                 >
                     <option disabled>sort by:</option>
                     {ORDER_LIST.map(({ label, value }) => (
-                        <option key={value} value={value} data-testid={value.includes("price") ? "sort-by-price" : "sort-by-rating"}>
+                        <option key={value} value={value}>
                             {label}
                         </option>
                     ))}
@@ -46,3 +56,31 @@ export const SortSelect = () => {
         </div>
     );
 };
+
+//     return (
+//         <div className="lg:w-1/4 w-full"> {/* <-- Dodane klasy tutaj */}
+//             <div className="block text-sm font-medium leading-6 text-gray-900">
+//                 <p className="block text-sm font-medium leading-6 text-gray-900">Sort by: </p>
+//                 <select
+//                     className="relative w-full cursor-default rounded-md bg-white py-1.5 pr-10 text-left text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 focus:outline-none focus:ring-2 focus:ring-indigo-600 sm:text-sm sm:leading-6"
+//                     name="sort_by"
+//                     id="sort_by_id"
+//                     value={searchParams.get("sort") || "Sort by"}
+//                     onChange={(event) => {
+//                         const currentSortValue = event.target.value;
+//                         const currentSearchParams = new URLSearchParams(searchParams.toString());
+//                         currentSearchParams.set("sort", currentSortValue);
+//                         router.push(`${pathname}?${currentSearchParams.toString()}` as Route);
+//                     }}
+//                 >
+//                     <option disabled>sort by:</option>
+//                     {ORDER_LIST.map(({ label, value }) => (
+//                         <option key={value} value={value} data-testid={value.includes("price") ? "sort-by-price" : "sort-by-rating"}>
+//                             {label}
+//                         </option>
+//                     ))}
+//                 </select>
+//             </div>
+//         </div>
+//     );
+// };
