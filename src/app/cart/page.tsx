@@ -71,6 +71,7 @@ import {redirect} from "next/navigation";
 import {IncrementProductQuantity} from "@/ui/atoms/IncrementProductQuantity";
 import {handlePaymentAction} from "@/app/cart/actions";
 import {RemoveButton} from "@/ui/atoms/buttons/RemoveButton";
+import NextImage from "next/image";
 
 export default async function Cart() {
     const cart = await getCartByIdFromCookie();
@@ -95,11 +96,14 @@ export default async function Cart() {
                     {cart.orderItems.map((item) => (
                         <li key={item.id} className="flex py-6">
                             <div className="flex-shrink-0">
-                                <img
-                                    src={item.product?.images[0].url}
-                                    alt={""}
-                                    className="h-24 w-24 rounded-md object-cover object-center sm:h-32 sm:w-32"
-                                />
+                                {item.product?.images[0] && (
+                                    <img
+                                        src={item.product?.images[0].url}
+                                        alt={""}
+                                        className="h-24 w-24 rounded-md object-cover object-center sm:h-32 sm:w-32"
+                                    />
+                                )}
+
                             </div>
 
                             <div className="ml-4 flex flex-1 flex-col sm:ml-6">
