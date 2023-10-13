@@ -39,9 +39,10 @@ export const SingleProductReviewForm = ({ productId, reviews }: SingleProductRev
         <>
             <div className="flex flex-wrap">
                 <div className="w-full lg:w-1/2 p-5">
+                    <p className="text-center text-2xl mt-12 mb-16 ">Add your comment...</p>
                     <form
                     ref={ref}
-                    className="flex flex-col gap-2"
+                    className="flex flex-col gap-2 "
                     action={addOptimisticReviews}
                     data-testid="add-review-form"
                 >
@@ -63,6 +64,7 @@ export const SingleProductReviewForm = ({ productId, reviews }: SingleProductRev
                 </form>
             </div>
                 <div className="w-full lg:w-1/2 p-5">
+                    <p className="text-center text-2xl mt-12 mb-16">Yours review</p>
                     {reviews && (
                         <div className="h-auto w-full sm:basis-2/3">
                             {optimisticReview.map((review) => (

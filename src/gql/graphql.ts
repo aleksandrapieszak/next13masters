@@ -10936,16 +10936,16 @@ export type CartAddProductMutation = { __typename?: 'Mutation', createOrderItem?
 export type CartCreateMutationVariables = Exact<{ [key: string]: never; }>;
 
 
-export type CartCreateMutation = { __typename?: 'Mutation', createOrder?: { __typename?: 'Order', id: string, orderItems: Array<{ __typename?: 'OrderItem', id: string, quantity: number, total: number, product?: { __typename?: 'Product', id: string, name: string, price: number } | null }> } | null };
+export type CartCreateMutation = { __typename?: 'Mutation', createOrder?: { __typename?: 'Order', id: string, orderItems: Array<{ __typename?: 'OrderItem', id: string, quantity: number, total: number, product?: { __typename?: 'Product', id: string, name: string, price: number, images: Array<{ __typename?: 'Asset', url: string }> } | null }> } | null };
 
 export type CartGetByIdQueryVariables = Exact<{
   id: Scalars['ID']['input'];
 }>;
 
 
-export type CartGetByIdQuery = { __typename?: 'Query', order?: { __typename?: 'Order', id: string, orderItems: Array<{ __typename?: 'OrderItem', id: string, quantity: number, total: number, product?: { __typename?: 'Product', id: string, name: string, price: number } | null }> } | null };
+export type CartGetByIdQuery = { __typename?: 'Query', order?: { __typename?: 'Order', id: string, orderItems: Array<{ __typename?: 'OrderItem', id: string, quantity: number, total: number, product?: { __typename?: 'Product', id: string, name: string, price: number, images: Array<{ __typename?: 'Asset', url: string }> } | null }> } | null };
 
-export type CartFragment = { __typename?: 'Order', id: string, orderItems: Array<{ __typename?: 'OrderItem', id: string, quantity: number, total: number, product?: { __typename?: 'Product', id: string, name: string, price: number } | null }> };
+export type CartFragment = { __typename?: 'Order', id: string, orderItems: Array<{ __typename?: 'OrderItem', id: string, quantity: number, total: number, product?: { __typename?: 'Product', id: string, name: string, price: number, images: Array<{ __typename?: 'Asset', url: string }> } | null }> };
 
 export type CartRemoveProductMutationVariables = Exact<{
   itemId: Scalars['ID']['input'];
@@ -11166,6 +11166,9 @@ export const CartFragmentDoc = new TypedDocumentString(`
       id
       name
       price
+      images(first: 1) {
+        url
+      }
     }
   }
 }
@@ -11253,6 +11256,9 @@ export const CartCreateDocument = new TypedDocumentString(`
       id
       name
       price
+      images(first: 1) {
+        url
+      }
     }
   }
 }`) as unknown as TypedDocumentString<CartCreateMutation, CartCreateMutationVariables>;
@@ -11272,6 +11278,9 @@ export const CartGetByIdDocument = new TypedDocumentString(`
       id
       name
       price
+      images(first: 1) {
+        url
+      }
     }
   }
 }`) as unknown as TypedDocumentString<CartGetByIdQuery, CartGetByIdQueryVariables>;

@@ -100,16 +100,16 @@ export const Nav = ({
                                         </div>
                                     </Tab.Group>
                                     <div className="space-y-6 border-t border-gray-200 px-4 py-6">
-                                        <div className="flow-root">
-                                            <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
-                                                Create an account
-                                            </a>
-                                        </div>
-                                        <div className="flow-root">
-                                            <a href="#" className="-m-2 block p-2 font-medium text-gray-900">
-                                                Sign in
-                                            </a>
-                                        </div>
+                                        {/*<div className="flow-root">*/}
+                                        {/*    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">*/}
+                                        {/*        Create an account*/}
+                                        {/*    </a>*/}
+                                        {/*</div>*/}
+                                        {/*<div className="flow-root">*/}
+                                        {/*    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">*/}
+                                        {/*        Sign in*/}
+                                        {/*    </a>*/}
+                                        {/*</div>*/}
                                         <div className="flow-root">
                                             <SearchInput/>
                                         </div>
@@ -183,7 +183,7 @@ export const Nav = ({
 
                                     {/*<div className="flex flex-1 items-center justify-end">*/}
                                     {/*    <div className="flex items-center lg:ml-8">*/}
-                                    {/*        /!* Cart *!/*/}
+                                    {/*        /!* Page *!/*/}
                                     {/*        <div className="ml-4 flow-root lg:ml-8">*/}
                                     {/*            <Link href="/cart" className="group -m-2 flex items-center p-2">*/}
                                     {/*                <ShoppingBagIcon*/}

@@ -53,8 +53,7 @@ export default async function SingleProductPage({params}: { params: {productId: 
     return (
         <>
             <SingleProduct product={product} />
-                    <SingleProductReviewForm productId={product.id} reviews={reviews}/>
-                <aside>
+            <aside>
                 <Suspense fallback={<Loading/>}>
                     {suggestedProducts ? (
                         <SuggestedProductsList products={suggestedProducts}/>
@@ -62,6 +61,8 @@ export default async function SingleProductPage({params}: { params: {productId: 
                         <div>Brak sugerowanych produktów.</div>
                     )}                </Suspense>
             </aside>
+                    <SingleProductReviewForm productId={product.id} reviews={reviews}/>
+
         </>
     )
 }

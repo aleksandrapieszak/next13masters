@@ -12,7 +12,6 @@ export default async function HomePage() {
 
     return (
         <>
-            <div> Home Page</div>
             <CollectionSection collections={collections}/>
             <aside>
                 <Suspense fallback={"Ładowanie....."}>

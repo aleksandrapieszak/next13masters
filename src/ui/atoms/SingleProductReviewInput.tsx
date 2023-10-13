@@ -27,7 +27,7 @@ type SingleProductReviewInputProps = {
 export const SingleProductReviewInput=({ label, type, name }: SingleProductReviewInputProps)=> {
     return (
         <div>
-            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900 border-t border-gray-200">
                 {label}
             </label>
             <div className="mt-2">

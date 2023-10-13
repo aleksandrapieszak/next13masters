@@ -8,6 +8,9 @@ fragment Cart on Order {
             id
             name
             price
+            images(first:1) {
+                url
+            }
         }
     }
 }
