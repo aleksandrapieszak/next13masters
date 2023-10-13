@@ -100,7 +100,7 @@ export default async function Cart() {
                                     <ProductCoverImage
                                         src={item.product.images[0].url}
                                         alt={""}
-                                        className="h-24 w-24 rounded-md object-cover object-center sm:h-32 sm:w-32"
+                                        // className="h-24 w-24 rounded-md object-cover object-center sm:h-32 sm:w-32"
                                     />
                                 )}
 
