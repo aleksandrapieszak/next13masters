@@ -23,7 +23,7 @@ export const StarsItemListSumRating = ({ numberOfStars }: StarsItemListSumRating
         return <div>No ratings yet!</div>
     }
     return (
-        <div className="mb-3 mt-2 flex justify-center">
+        <div className="mb-3 mt-2 flex justify-center" data-testId="product-rating">
             {Array.from({ length: numberOfStars }).map((_, index) => (
                 <StarItem key={index} />
             ))}
