@@ -14,7 +14,6 @@
 
 "use client"
 import {StarItem} from "@/ui/atoms/StarItem";
-import {hidden} from "kleur/colors";
 type StarsItemListSumRatingProps = {
     numberOfStars: number;
     hidden: boolean;

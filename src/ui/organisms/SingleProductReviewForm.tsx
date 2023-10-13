@@ -59,7 +59,7 @@ export const SingleProductReviewForm = ({ productId, reviews }: SingleProductRev
                     {/*<SingleProductReviewRatingInput />*/}
                     <SingleProductReviewInput label={"Name"} type={"text"} name={"name"} />
                     <SingleProductReviewInput label={"Email"} type={"email"} name={"email"} />
-                    <SubmitButton label={"ADD REVIEW"} />
+                    <SubmitButton label={"Add review"} />
                 </form>
             </div>
                 <div className="w-full lg:w-1/2 p-5">

@@ -10,7 +10,7 @@ export const SubmitButton = ({ label }: SubmitButtonProps) => {
         <button
             type="submit"
             disabled={formStatus.pending}
-            className="rounded-md bg-amber-600 px-6 py-3 text-neutral-100 disabled:cursor-wait disabled:bg-amber-700"
+            className="mt-3 flex items-center justify-center rounded-md bg-gray-300 px-5 py-2.5 text-center text-sm font-medium text-black hover:bg-gray-500 hover:text-white focus:outline-none focus:ring-4 focus:ring-blue-300"
             data-testid={label === "ADD TO CART" ? "add-to-cart-button" : undefined}
         >
             {label}

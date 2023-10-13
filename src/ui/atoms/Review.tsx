@@ -1,9 +1,37 @@
+// import { type ReviewItemFragment } from "@/gql/graphql";
+//
+// type ReviewProps = {
+//     review: ReviewItemFragment;
+// };
+// export const Review = ({ review: { headline, content, rating, name: firstName } }: ReviewProps) => {
+//     return (
+//         <article>
+//             <div className="flex w-full items-center gap-5 py-2">
+//                 <div className="flex h-10 w-10 items-center justify-center rounded-full bg-neutral-200">
+//                     {firstName && firstName.charAt(0)}
+//                 </div>
+//                 <div className="flex flex-col items-left text-start">
+//                     <p className="text-left text-slategray text-sm font-bold">author: {firstName}</p>
+//                     <p className="text-left text-slategray text-sm font-bold">Rating: {rating}</p>
+//                 </div>
+//             </div>
+//             <div className="p-6">
+//                 <p className="text-slategray text-sm font-medium">{headline}</p>
+//                 <p className="text-slategray italic">{content}</p>
+//             </div>
+//             <hr />
+//         </article>
+//     );
+// };
 import { type ReviewItemFragment } from "@/gql/graphql";
 
 type ReviewProps = {
     review: ReviewItemFragment;
 };
+
 export const Review = ({ review: { headline, content, rating, name: firstName } }: ReviewProps) => {
+    const STAR_UNICODE = "⭐";
+
     return (
         <article>
             <div className="flex w-full items-center gap-5 py-2">
@@ -12,7 +40,7 @@ export const Review = ({ review: { headline, content, rating, name: firstName } 
                 </div>
                 <div className="flex flex-col items-left text-start">
                     <p className="text-left text-slategray text-sm font-bold">author: {firstName}</p>
-                    <p className="text-left text-slategray text-sm font-bold">Rating: {rating}</p>
+                    <p className="text-left text-slategray text-sm font-bold">Rating: {STAR_UNICODE.repeat(rating)}</p>
                 </div>
             </div>
             <div className="p-6">
