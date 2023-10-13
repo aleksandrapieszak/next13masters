@@ -18,7 +18,7 @@ export const ProductItem = ({
             <ProductTitle name={name}/>
             {categories[0] && (<ProductCategory category={categories[0].name}/>)}
             {averageRating && (
-                <StarsItemListSumRating numberOfStars={averageRating}/>
+                <StarsItemListSumRating numberOfStars={averageRating} hidden={false}/>
 
             )}
         </div>

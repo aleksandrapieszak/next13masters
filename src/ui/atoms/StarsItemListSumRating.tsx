@@ -14,19 +14,24 @@
 
 "use client"
 import {StarItem} from "@/ui/atoms/StarItem";
+import {hidden} from "kleur/colors";
 type StarsItemListSumRatingProps = {
     numberOfStars: number;
+    hidden: boolean;
 };
-export const StarsItemListSumRating = ({ numberOfStars }: StarsItemListSumRatingProps) => {
+export const StarsItemListSumRating = ({ numberOfStars, hidden }: StarsItemListSumRatingProps) => {
 
     if (numberOfStars === 0){
         return <div>No ratings yet!</div>
     }
-    return (
-        <div className="mb-3 mt-2 flex justify-center" data-testId="product-rating">
-            {Array.from({ length: numberOfStars }).map((_, index) => (
-                <StarItem key={index} />
-            ))}
-        </div>
-    );
+        return (
+            <div className="mb-3 mt-2 flex justify-center items-center" data-testId="product-rating">
+                {hidden && <span className="mr-4">Rating: {numberOfStars}.00</span>}
+                {Array.from({length: numberOfStars}).map((_, index) => (
+                    <StarItem key={index}/>
+                ))}
+            </div>
+        );
+
+
 };

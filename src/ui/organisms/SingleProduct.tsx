@@ -13,6 +13,7 @@ export const SingleProduct = async ({ product }: SingleProductItemProps) => {
 
     const product1 = await getProductById(product.id);
     const average = product1?.averageRating;
+
     return (
         <div className="bg-white">
             <div className="pb-16 pt-6 sm:pb-24">
@@ -21,11 +22,9 @@ export const SingleProduct = async ({ product }: SingleProductItemProps) => {
                         <div className="lg:col-span-5 lg:col-start-8">
                             <div className="flex justify-between">
                                 <h1 className="text-xl font-medium text-gray-900">{product.name}</h1>
-                                <p className="text-xl font-medium text-gray-900">{product.price} $</p>
-                                Rating:
-                                {average}.00
+                                <p className="text-xl font-medium text-gray-900">{product.price/100} zł</p>
                                 {average && (
-                                    <StarsItemListSumRating numberOfStars={average}/>
+                                    <StarsItemListSumRating numberOfStars={average} hidden={true}/>
                                     )}
 
                             </div>
