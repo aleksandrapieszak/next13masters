@@ -37,8 +37,8 @@ export const SingleProductReviewForm = ({ productId, reviews }: SingleProductRev
 
     return (
         <>
-            <div className="flex flex-wrap">
-                <div className="w-full lg:w-1/2 p-5">
+            <div className="flex flex-wrap bg-white mt-10">
+                <div className="w-full lg:w-1/2 p-5 border-r">
                     <p className="text-center text-2xl mt-12 mb-16 ">Add your comment...</p>
                     <form
                     ref={ref}
@@ -63,19 +63,19 @@ export const SingleProductReviewForm = ({ productId, reviews }: SingleProductRev
                     <SubmitButton label={"Add review"} />
                 </form>
             </div>
-                <div className="w-full lg:w-1/2 p-5">
-                    <p className="text-center text-2xl mt-12 mb-16">Yours review</p>
-                    {reviews && (
-                        <div className="h-auto w-full sm:basis-2/3">
-                            {optimisticReview.map((review) => (
-                                <Review key={review.id} review={review} />
-                            ))}
-                        </div>)}
-                </div>
+
 
             </div>
 
-
+            <div className="w-full lg:w-1/2 p-5  mt-10 bg-white">
+                <p className="text-center text-2xl mt-12 mb-16">Yours review</p>
+                {reviews && (
+                    <div className="h-auto w-full sm:basis-2/3">
+                        {optimisticReview.map((review) => (
+                            <Review key={review.id} review={review} />
+                        ))}
+                    </div>)}
+            </div>
         </>
     );
 };

@@ -17,7 +17,7 @@ export const IncrementProductQuantity = ({
         <form className="flex items-center gap-3">
             <button
                 type="submit"
-                className="box-content h-5 w-5  cursor-pointer rounded-md bg-neutral-400 p-1 disabled:bg-neutral-200"
+                className="box-content h-5 w-5  cursor-pointer rounded-md bg-neutral-400 p-1 hover:bg-gray-300 disabled:bg-neutral-200"
                 data-testid="decrement"
                 disabled={optimisticQuantity <= 1}
                 formAction={async () => {
@@ -30,7 +30,7 @@ export const IncrementProductQuantity = ({
             <span data-testid="quantity">{optimisticQuantity}</span>
             <button
                 type="submit"
-                className="box-content h-5 w-5 cursor-pointer rounded-md bg-neutral-400 p-1"
+                className="box-content h-5 w-5 cursor-pointer rounded-md bg-neutral-400 p-1 hover:bg-gray-300"
                 data-testid="increment"
                 formAction={async () => {
                     setOptimisticQuantity(optimisticQuantity + 1);

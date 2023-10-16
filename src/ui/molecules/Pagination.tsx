@@ -12,7 +12,7 @@ export const Pagination = ({ totalPages, url, sortValue }: PaginationProps) => {
 
     if (sortValue){
         return (
-            <div className="mt-2 text-center isolate rounded-lg   ">
+            <div className="mt-2 text-center isolate rounded-lg bg-white ">
                 <nav className="isolate inline-flex -space-x-px rounded-lg shadow-sm border" aria-label="Pagination">
                     {pages.map((page) => (
                         <ActiveLink key={page} className={"relative z-10 inline-flex items-center bg-gray-200 px-4 py-2 text-sm font-semibold text-black hover:scale-125"} activeClassName={"underline text-white bg-gray-400 "} href={`${url}/${page}?sort=${sortValue}` as Route}>

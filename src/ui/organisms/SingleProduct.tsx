@@ -36,9 +36,11 @@ export const SingleProduct = async ({ product }: SingleProductItemProps) => {
                             <div className="flex justify-between items-center">
                                 <h1 className="text-xl font-medium text-gray-900">{product.name}</h1>
                                 <p className="text-xl font-medium text-gray-900">{product.price/100} zł</p>
-                                {average && (
-                                    <StarsItemListSumRating numberOfStars={average} hidden={true}/>
-                                )}
+                            </div>
+                            <div className="flex justify-between items-center">
+                            {average && (
+                                <StarsItemListSumRating numberOfStars={average} hidden={true}/>
+                            )}
                             </div>
                             <div className="mt-10">
                                 <h2 className="text-sm font-medium text-gray-900">Description</h2>

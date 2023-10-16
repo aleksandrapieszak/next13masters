@@ -144,7 +144,10 @@ export const getProductById = async (productId: string) => {
             query: ProductGetByIdDocument,
             variables: {
                 id: productId
-            }
+            },
+        next:{
+            revalidate: 15
+        }
         }
     )
 

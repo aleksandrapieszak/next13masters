@@ -9,7 +9,7 @@ export const SuggestedProductsList = async ({ products }: SuggestedProductListPr
     // const products = await getProductList();
     // await sleep(5000);
     return(
-        <div data-testid="related-products" className="bg-gray-100 p-12 mt-20">
+        <div data-testid="related-products" className="bg-white p-12 mt-20">
             <h2 className="text-xl text-center">Suggested products</h2>
             <ProductList products={products}/>
         </div>

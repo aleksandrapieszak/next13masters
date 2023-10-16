@@ -20,7 +20,7 @@ export const SortSelect = () => {
     const searchParams = useSearchParams();
 
     return (
-        <div className="lg:w-1/4 w-full">
+        <div className="lg:w-1/4 w-full bg-white p-5">
             <div className="block text-sm font-medium leading-6 text-gray-900">
                 <p className="block text-sm font-medium leading-6 text-gray-900">Sort by: </p>
 

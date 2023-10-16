@@ -38,7 +38,7 @@ export default async function ProductsPaginationPage({params, searchParams}:Prod
 
     return (
         <div>
-            <div className="flex justify-end">
+            <div className="flex justify-end bg-white">
                 <SortSelect/></div>
             <ProductList products={productsByPage}/>
             <Pagination  totalPages={totalPages} url={"/products"} sortValue={sort} />
