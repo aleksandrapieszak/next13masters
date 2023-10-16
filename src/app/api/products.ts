@@ -79,7 +79,7 @@ export const getProductsByPage = async (page: number
 
 export const getProductsByPageSortBy = async (page: number, orderBy: ProductOrderByInput | undefined,
 ) => {
-    const productsPerPage = 6;
+    const productsPerPage = 8;
     const skip = (page - 1) * productsPerPage;
     const graphqlResponse = await executeGraphql({
             query: GetProductsByPageOrderByDocument,

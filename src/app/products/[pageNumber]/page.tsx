@@ -27,7 +27,7 @@ export const generateStaticParams = async () => {
 
 export default async function ProductsPaginationPage({params, searchParams}:ProductsPageProps) {
 
-    const productInPage = 5;
+    const productInPage = 8;
     const { sort } = searchParams;
     const totalProducts = (await getProductListOrderBy(sort)).length
     const totalPages = Math.ceil(totalProducts/productInPage);
