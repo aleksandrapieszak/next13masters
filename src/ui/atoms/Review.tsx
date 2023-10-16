@@ -63,7 +63,7 @@ function classNames(...classes: (string | boolean | undefined)[]) {
     return classes.filter(Boolean).join(' ');
 }
 
-export const Review = ({ review: { headline, content, rating, name: firstName } }: ReviewProps) => {
+export const Review = ({ review: { headline, content, rating} }: ReviewProps) => {
     return (
         <div className="bg-white">
             {/*<div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">*/}
