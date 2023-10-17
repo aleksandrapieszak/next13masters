@@ -5,7 +5,7 @@ import React from "react";
 import {getCategories} from "@/app/api/products";
 import {Nav} from "@/ui/organisms/Nav";
 import {getCartByIdFromCookie} from "@/app/api/cart";
-import ScrollToTopButton from "@/ui/atoms/buttons/ScrollToTopButton";
+import {ScrollToTopButton} from "@/ui/atoms/buttons/ScrollToTopButton";
 import {Footer} from "@/ui/organisms/Footer";
 
 const inter = Inter({subsets: ["latin", "latin-ext"]});
