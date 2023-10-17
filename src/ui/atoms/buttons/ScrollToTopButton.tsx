@@ -42,7 +42,7 @@
 'use client'
 import { useEffect, useState } from 'react';
 
-const ScrollToTopButton = () => {
+export const ScrollToTopButton =()=>{
     const [visible, setVisible] = useState(false);
 
     const toggleVisible = () => {
@@ -78,4 +78,3 @@ const ScrollToTopButton = () => {
     );
 };
 
-export default ScrollToTopButton;
