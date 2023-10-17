@@ -7,5 +7,5 @@ export default async function StaticPage({ params }: { params: { filename: strin
         () => notFound(),
     );
 
-    return <article className="prose-lg"><Content /></article>;
+    return <article className="w-full p-5  "><Content /></article>;
 }

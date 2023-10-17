@@ -80,19 +80,19 @@ export const Nav = ({
                                                 <ul className="w-full" onClick={handleLinkClick}>
                                                     <li className="w-full text-left"> {/* Dodane w-full i text-center */}
                                                         <ActiveLink exact={true} href={"/"}
-                                                                    className={`text-black hover:text-gray-400`}
-                                                                    activeClassName={`border-b-4 border-indigo-500`}>Home </ActiveLink>
+                                                                    className="block py-2 pl-3 pr-4 text-base font-medium text-black hover:bg-gray-50 hover:text-gray-700"
+                                                                    activeClassName={`border-b-4 border-gray-500`}>Home </ActiveLink>
                                                     </li>
                                                     <li className="w-full text-left">
                                                         <ActiveLink exact={false} href={"/products"}
-                                                                    className={`text-black hover:text-gray-400`}
-                                                                    activeClassName={`border-b-4 border-indigo-500`}> All </ActiveLink>
+                                                                    className="block py-2 pl-3 pr-4 text-base font-medium text-black hover:bg-gray-50 hover:text-gray-700"
+                                                                    activeClassName={`border-b-4 border-gray-500`}> All </ActiveLink>
                                                     </li>
                                                     {categories.map((value) => (
                                                         <li key={value.id} className="w-full text-left">
                                                             <ActiveLink exact={false} href={`/categories/${value.slug}`}
-                                                                        className={`text-black hover:text-gray-400`}
-                                                                        activeClassName={`border-b-4 border-indigo-500`}>{value.name}</ActiveLink>
+                                                                        className="block py-2 pl-3 pr-4 text-base font-medium text-black hover:bg-gray-50 hover:text-gray-700"
+                                                                        activeClassName={`border-b-4 border-gray-500`}>{value.name}</ActiveLink>
                                                         </li>
                                                     ))}
                                                 </ul>
@@ -100,16 +100,6 @@ export const Nav = ({
                                         </div>
                                     </Tab.Group>
                                     <div className="space-y-6 border-t border-gray-200 px-4 py-6">
-                                        {/*<div className="flow-root">*/}
-                                        {/*    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">*/}
-                                        {/*        Create an account*/}
-                                        {/*    </a>*/}
-                                        {/*</div>*/}
-                                        {/*<div className="flow-root">*/}
-                                        {/*    <a href="#" className="-m-2 block p-2 font-medium text-gray-900">*/}
-                                        {/*        Sign in*/}
-                                        {/*    </a>*/}
-                                        {/*</div>*/}
                                         <div className="flow-root">
                                             <SearchInput/>
                                         </div>
@@ -127,14 +117,6 @@ export const Nav = ({
                                 <div className="flex h-16 items-center justify-between">
                                     {/* Logo (lg+) */}
                                     <div className="hidden lg:flex lg:flex-1 lg:items-center">
-                                        <a href="#">
-                                            <span className="sr-only">Your Company</span>
-                                            {/*<img*/}
-                                            {/*    className="h-8 w-auto"*/}
-                                            {/*    src="https://tailwindui.com/img/logos/mark.svg?color=indigo&shade=600"*/}
-                                            {/*    alt=""*/}
-                                            {/*/>*/}
-                                        </a>
                                     </div>
 
                                     <div className="hidden h-full lg:flex">
@@ -144,19 +126,19 @@ export const Nav = ({
                                                 <ul className="flex space-x-4 mx-auto p-5 max-w-7xl px-2 sm:px-6 lg:px-8 text-lg">
                                                     <li>
                                                         <ActiveLink exact={true} href={"/"}
-                                                                    className={`text-black hover:text-gray-400`}
-                                                                    activeClassName={`underline`}>Home </ActiveLink>
+                                                                    className="block py-2 pl-3 pr-4 text-base font-medium text-black hover:bg-gray-50 hover:text-gray-700"
+                                                                    activeClassName={`border-b-4 border-gray-500`}>Home </ActiveLink>
                                                     </li>
                                                     <li>
                                                         <ActiveLink exact={false} href={"/products"}
-                                                                    className={`text-black hover:text-gray-400`}
-                                                                    activeClassName={`underline`}> All </ActiveLink>
+                                                                    className="block py-2 pl-3 pr-4 text-base font-medium text-black hover:bg-gray-50 hover:text-gray-700"
+                                                                    activeClassName={`border-b-4 border-gray-500`}> All </ActiveLink>
                                                     </li>
                                                     {categories.map((value) => (
                                                         <li key={value.id}>
                                                             <ActiveLink exact={false} href={`/categories/${value.slug}`}
-                                                                        className={`text-black hover:text-gray-400`}
-                                                                        activeClassName={`border-b-4 border-indigo-500`}>{value.name}</ActiveLink>
+                                                                        className="block py-2 pl-3 pr-4 text-base font-medium text-black hover:bg-gray-50 hover:text-gray-700"
+                                                                        activeClassName={`border-b-4 border-gray-500`}>{value.name}</ActiveLink>
                                                         </li>
                                                     ))}
                                                     <SearchInput/>
@@ -178,25 +160,8 @@ export const Nav = ({
 
                                         {/* Search */}
                                         <span className="sr-only">Search</span>
-                                        <MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true"/>
+                                        {/*<MagnifyingGlassIcon className="h-6 w-6" aria-hidden="true"/>*/}
                                     </div>
-
-                                    {/*<div className="flex flex-1 items-center justify-end">*/}
-                                    {/*    <div className="flex items-center lg:ml-8">*/}
-                                    {/*        /!* Page *!/*/}
-                                    {/*        <div className="ml-4 flow-root lg:ml-8">*/}
-                                    {/*            <Link href="/cart" className="group -m-2 flex items-center p-2">*/}
-                                    {/*                <ShoppingBagIcon*/}
-                                    {/*                    className="h-6 w-6 flex-shrink-0 text-gray-400 group-hover:text-gray-500"*/}
-                                    {/*                    aria-hidden="true"*/}
-                                    {/*                />*/}
-                                    {/*                <span*/}
-                                    {/*                    className="ml-2 text-sm font-medium text-gray-700 group-hover:text-gray-800">{quantity}</span>*/}
-                                    {/*                <span className="sr-only">items in cart, view bag</span>*/}
-                                    {/*            </Link>*/}
-                                    {/*        </div>*/}
-                                    {/*    </div>*/}
-                                    {/*</div>*/}
                                 </div>
                             </div>
                         </div>
