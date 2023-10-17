@@ -76,8 +76,8 @@ export async function handlePaymentAction() {
             quantity: item.quantity,
         })),
         mode: "payment",
-        success_url: `http://localhost:3000/cart/success?session_id={CHECKOUT_SESSION_ID}`,
-        cancel_url: `http://localhost:3000/cart/canceled`,
+        success_url: `https://next13masters-five.vercel.app/cart/success?session_id={CHECKOUT_SESSION_ID}`,
+        cancel_url: `https://next13masters-five.vercel.app/cart/canceled`,
     });
 
     if (!session.url){
