@@ -92,26 +92,96 @@ export default async function Cart() {
                 </h2>
 
                 <ul role="list" className="divide-y divide-gray-200 border-b border-t border-gray-200">
+{/*                    {cart.orderItems.map((item) => (*/}
+{/*                        <li key={item.id} className="flex py-6">*/}
+{/*                            <div className="flex-shrink-0">*/}
+{/*                                {item.product?.images[0]?.url && (*/}
+{/*                                    <ProductCoverImage*/}
+{/*                                        src={item.product.images[0].url}*/}
+{/*                                        alt={""}*/}
+{/*                                    />*/}
+{/*                                )}*/}
+
+{/*                            </div>*/}
+
+{/*                            <div className="ml-4 flex flex-1 flex-col sm:ml-6">*/}
+{/*                                <div>*/}
+{/*                                    <div className="flex justify-between">*/}
+{/*                                        <h4 className="text-sm">*/}
+{/*                                            {item.product?.name}*/}
+{/*                                        </h4>*/}
+{/*                                        { item.product?.price && (*/}
+{/*                                            <p className="ml-4 text-sm font-medium text-gray-900">{item.product?.price*item.quantity/100} zł</p>*/}
+{/*                                        )}*/}
+{/*                                    </div>*/}
+{/*                                </div>*/}
+
+{/*                                <div className="mt-4 flex flex-1 items-end justify-between">*/}
+{/*                                    <IncrementProductQuantity*/}
+{/*                                        itemId={item.id}*/}
+{/*                                        quantity={item.quantity}*/}
+{/*                                        // price={item.product.price}*/}
+{/*                                    />*/}
+{/*                                    <div className="ml-4">*/}
+{/*                                        <RemoveButton itemId={item.id}/>*/}
+{/*                                    </div>*/}
+{/*                                </div>*/}
+{/*                            </div>*/}
+{/*                        </li>*/}
+{/*                    ))}*/}
+{/*                </ul>*/}
+{/*            </section>*/}
+
+{/*            /!* Order summary *!/*/}
+{/*            <section aria-labelledby="summary-heading" className="mt-10">*/}
+{/*                <h2 id="summary-heading" className="sr-only">*/}
+{/*                    Order summary*/}
+{/*                </h2>*/}
+
+{/*                <div>*/}
+{/*                    <dl className="space-y-4">*/}
+{/*                        <div className="flex items-center justify-between">*/}
+{/*                            <dt className="text-base font-medium text-gray-900">Subtotal</dt>*/}
+{/*                            <dd className="ml-4 text-base font-medium text-gray-900">{totalAmount/100} zł</dd>*/}
+{/*                        </div>*/}
+{/*                    </dl>*/}
+{/*                    <p className="mt-1 text-sm text-gray-500">Shipping and taxes will be calculated at checkout.</p>*/}
+{/*                </div>*/}
+
+{/*                <form className="mt-10" action={handlePaymentAction}>*/}
+{/*                    <button*/}
+{/*                        type="submit"*/}
+{/*                        className="w-full rounded-md border border-transparent bg-gray-400 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50"*/}
+{/*                    >*/}
+{/*                        Pay*/}
+{/*                    </button>*/}
+{/*                </form>*/}
+
+{/*            </section>*/}
+{/*        </div>*/}
+{/*    )*/}
+{/*}*/}
                     {cart.orderItems.map((item) => (
-                        <li key={item.id} className="flex py-6">
-                            <div className="flex-shrink-0">
+                        <li key={item.id} className="flex flex-col sm:flex-row py-6 items-center">
+                            <div className="w-full sm:w-auto flex-shrink-0 mb-4 sm:mb-0">
                                 {item.product?.images[0]?.url && (
                                     <ProductCoverImage
                                         src={item.product.images[0].url}
                                         alt={""}
+                                        className="object-cover object-center w-full" // Ustaw szerokość na 'w-full' dla mniejszych ekranów
+                                        style={{ maxWidth: '150px', maxHeight: '150px' }} // Ograniczenie maksymalnych wymiarów
                                     />
                                 )}
-
                             </div>
 
-                            <div className="ml-4 flex flex-1 flex-col sm:ml-6">
+                            <div className="ml-0 sm:ml-4 flex flex-1 flex-col">
                                 <div>
-                                    <div className="flex justify-between">
-                                        <h4 className="text-sm">
+                                    <div className="flex justify-between items-start sm:items-center flex-col sm:flex-row">
+                                        <h4 className="text-sm mb-2 sm:mb-0">
                                             {item.product?.name}
                                         </h4>
                                         { item.product?.price && (
-                                            <p className="ml-4 text-sm font-medium text-gray-900">{item.product?.price*item.quantity/100} zł</p>
+                                            <p className="text-sm font-medium text-gray-900">{item.product?.price*item.quantity/100} zł</p>
                                         )}
                                     </div>
                                 </div>
@@ -120,44 +190,47 @@ export default async function Cart() {
                                     <IncrementProductQuantity
                                         itemId={item.id}
                                         quantity={item.quantity}
-                                        // price={item.product.price}
                                     />
-                                    <div className="ml-4">
-                                        <RemoveButton itemId={item.id}/>
-                                    </div>
+
+                                </div>
+                                <div className="mt-4 flex flex-1 items-center justify-between">
+
+                                <div className="">
+                                    <RemoveButton itemId={item.id}/>
+                                </div>
                                 </div>
                             </div>
                         </li>
                     ))}
                 </ul>
-            </section>
+                            </section>
 
-            {/* Order summary */}
-            <section aria-labelledby="summary-heading" className="mt-10">
-                <h2 id="summary-heading" className="sr-only">
-                    Order summary
-                </h2>
+                            {/* Order summary */}
+                            <section aria-labelledby="summary-heading" className="mt-10">
+                                <h2 id="summary-heading" className="sr-only">
+                                    Order summary
+                                </h2>
 
-                <div>
-                    <dl className="space-y-4">
-                        <div className="flex items-center justify-between">
-                            <dt className="text-base font-medium text-gray-900">Subtotal</dt>
-                            <dd className="ml-4 text-base font-medium text-gray-900">{totalAmount/100} zł</dd>
+                                <div>
+                                    <dl className="space-y-4">
+                                        <div className="flex items-center justify-between">
+                                            <dt className="text-base font-medium text-gray-900">Subtotal</dt>
+                                            <dd className="ml-4 text-base font-medium text-gray-900">{totalAmount/100} zł</dd>
+                                        </div>
+                                    </dl>
+                                    <p className="mt-1 text-sm text-gray-500">Shipping and taxes will be calculated at checkout.</p>
+                                </div>
+
+                                <form className="mt-10" action={handlePaymentAction}>
+                                    <button
+                                        type="submit"
+                                        className="w-full rounded-md border border-transparent bg-gray-400 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50"
+                                    >
+                                        Pay
+                                    </button>
+                                </form>
+
+                            </section>
                         </div>
-                    </dl>
-                    <p className="mt-1 text-sm text-gray-500">Shipping and taxes will be calculated at checkout.</p>
-                </div>
-
-                <form className="mt-10" action={handlePaymentAction}>
-                    <button
-                        type="submit"
-                        className="w-full rounded-md border border-transparent bg-gray-400 px-4 py-3 text-base font-medium text-white shadow-sm hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-gray-500 focus:ring-offset-2 focus:ring-offset-gray-50"
-                    >
-                        Pay
-                    </button>
-                </form>
-
-            </section>
-        </div>
-    )
-}
+                    )
+                }

@@ -2,6 +2,7 @@ import React, {Suspense} from "react";
 import {SuggestedProductsList} from "@/ui/organisms/SuggestedProducts";
 import {getCollections, getProductsSuggestedList} from "@/app/api/products";
 import {CollectionSection} from "@/ui/organisms/CollectionSection";
+import ScrollToTopButton from "@/ui/atoms/buttons/ScrollToTopButton";
 
 export default async function HomePage() {
     const suggestedProducts =
