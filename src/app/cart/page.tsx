@@ -168,8 +168,6 @@ export default async function Cart() {
                                     <ProductCoverImage
                                         src={item.product.images[0].url}
                                         alt={""}
-                                        className="object-cover object-center w-full" // Ustaw szerokość na 'w-full' dla mniejszych ekranów
-                                        style={{ maxWidth: '150px', maxHeight: '150px' }} // Ograniczenie maksymalnych wymiarów
                                     />
                                 )}
                             </div>
